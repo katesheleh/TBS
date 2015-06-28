@@ -33,9 +33,24 @@
 
 @media(min-width: 760px) and (max-width: 1079px) {
   .form {
-  &__input {
-    margin-right: 20px;
+    &__input {
+      margin-right: 20px;
+    }
+    &__submit {}
   }
-  &__submit {}
 }
+
+
+
+
+@media(min-width: 320px) and (max-width: 759px) {
+  .form {
+    flex-direction: column;
+    padding: 0 0 30px 0;
+    &__input {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+    &__submit {}
+  }
 }

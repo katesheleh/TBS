@@ -26,8 +26,29 @@
 
 
 
-// @media(min-width: 760px) and (max-width: 1079px) {
-//   width: 100%;
-//   float: none;
-//   text-align: center;
-// }
+@media(min-width: 760px) and (max-width: 1079px) {
+  .contacts {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    &__details {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+
+
+
+@media(min-width: 320px) and (max-width: 759px) {
+    .contacts {
+      width: 100%;
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      padding: 0;
+    &__details {
+      margin-bottom: 0;
+    }
+  }
+}
