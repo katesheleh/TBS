@@ -1,0 +1,35 @@
+.discount {
+  padding-top: 6px;
+  margin-bottom: 41px;
+  background-color: @bg-attend-dark;
+
+
+
+
+
+  &__header {
+    margin-bottom: 11px;
+  }
+
+
+
+
+
+  &__text {
+    .small-title(@line-height: 36px);
+    color: @color-light;
+    margin: 0 0 56px 0;
+    font-weight: 300;
+  }
+}
+
+
+@media(min-width: 760px) and (max-width: 1079px) {
+  .discount {
+    &__text {
+      font-size: 26px;
+      line-height: 30px;
+      margin-bottom: 40px;
+    }
+  }
+}

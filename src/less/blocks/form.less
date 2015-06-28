@@ -1,0 +1,41 @@
+.form {
+  padding: 0 43px 45px 43px;
+  display: flex;
+  &__input {
+    width: 302px;
+    padding: 9px 19px 7px 19px;
+    background-color: @bg-attend-dark;
+    border: 2px solid @border-light;
+    margin-right: 30px;
+    outline: none;
+
+
+
+
+     &::-webkit-input-placeholder {
+      .placeholder;
+      color: @color-light;
+    }
+
+    &:-moz-placeholder {
+      .placeholder;
+      color: @color-light;
+    }
+  }
+  &__submit {
+      width: 302px;
+      outline: none;
+  }
+}
+
+
+
+
+@media(min-width: 760px) and (max-width: 1079px) {
+  .form {
+  &__input {
+    margin-right: 20px;
+  }
+  &__submit {}
+}
+}

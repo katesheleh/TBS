@@ -1,0 +1,129 @@
+.gallery {
+  display: flex;
+  flex-direction: row;
+  .cf;
+  width: 90%;
+  margin: 0 auto;
+
+
+  &__column {
+    width: 50%;
+  }
+
+
+
+  &__column--first {
+    padding-right: 12px;
+  }
+
+
+
+  &__inner {
+    display: block;
+    float: left;
+    width: 50%;
+  }
+
+  &__inner--left-1 {
+    width: 55%;
+  }
+
+  &__inner--right-1 {
+    width: 45%;
+  }
+
+  &__inner--left-2 {
+    width: 40%;
+  }
+
+  &__inner--right-2 {
+    width: 60%;
+  }
+
+
+
+
+
+  &__item {
+    margin-bottom: 26px;
+  }
+
+  &__item--1 {}
+
+  &__item--2 {
+    float: left;
+    margin-bottom: 20px;
+  }
+
+  &__item--3 {
+    float: left;
+  }
+
+  &__item--4 {
+    margin-bottom: 20px;
+  }
+
+  &__item--5 {}
+
+  &__item--6 {
+    float: left;
+    margin-bottom: 20px;
+    margin-left: 3px;
+  }
+
+  &__item--7 {
+    float: left;
+    margin-bottom: 17px;
+    margin-left: 3px;
+  }
+
+  &__item--8 {
+    float: left;
+    margin-left: 3px;
+  }
+  &__item--9 {
+    margin-bottom: 20px;
+  }
+  &__item--10 {}
+
+
+
+  &__img {
+    .img-setting;
+  }
+}
+
+
+
+@media(min-width: 760px) and (max-width: 1079px) {
+  .gallery {
+    &__item--1 {
+      margin-bottom: 15px;
+    }
+
+
+    &__item--2 {
+      margin-right: 15px;
+    }
+
+
+    &__item--3 {
+      margin-right: 15px;
+    }
+
+
+       &__item--6 {
+      margin-right: 15px;
+    }
+
+
+    &__item--7 {
+      margin-right: 15px;
+    }
+
+
+    &__item--8 {
+      margin-right: 15px;
+    }
+  }
+}
