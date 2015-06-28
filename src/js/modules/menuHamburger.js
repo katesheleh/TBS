@@ -1,21 +1,9 @@
-var example = (function() {
-
-  var example = {
-    init: function(){
-      console.log('hey there!');
-    }
-  };
-
-  return example;
-}());
-
 var menuHamburger = (function() {
 
   var menuHamburger = {
     init: function(){
       // nav .js-menu
       // main link .js-menu-control
-      // .js-headline
       var menuControl = document.querySelector(".js-menu-control"),
       menu = document.querySelector(".js-menu");
 
@@ -29,6 +17,3 @@ menuControl.addEventListener("click", function(ev){
 
   return menuHamburger;
 }());
-
-
-  document.querySelector('.js-menu-control') && menuHamburger.init();

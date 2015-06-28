@@ -1,22 +1,49 @@
 .logo {
+  position: relative;
   display: block;
   height: 160px;
   width: 250px;
   text-align: left;
   padding-bottom: 200px;
   .hide-text;
+}
+
+
+.icon-logo {
+  position: absolute;
+  top: 0;
+  left: -12px;
+  bottom: 0;
+  right: 0;
+}
 
 
 
-  &__icon--logo {
-    position: relative;
-    &:before {
+@media(min-width: 760px) and (max-width: 1079px) {
+    .logo {
+      height: 160px;
+      width: 10px;
       position: absolute;
-      content: " ";
-      top: 0;
+      top: 223px;
       bottom: 0;
       right: 0;
-      left: -12px;
+      left: -44px;
+      margin: auto 0;
     }
-  }
+}
+
+
+
+
+@media(min-width: 1px) and (max-width: 759px) {
+    .logo {
+      height: 160px;
+      width: 10px;
+      position: absolute;
+      top: 53px;
+      bottom: 0;
+      right: 0;
+      left: -18px;
+      margin: auto 0;
+    }
 }
