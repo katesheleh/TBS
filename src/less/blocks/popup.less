@@ -1,0 +1,47 @@
+.popup {
+  font-family: @ff-base;
+  &__header {
+    color: @color-base;
+    line-height: 35px;
+  }
+  &__text {
+    color: @color-base;
+  }
+    &__btn {
+    width: 300px;
+    padding: 9px 19px 9px 19px;
+    background-color: @bg-success;
+    border: none;
+    color: @color-light;
+  }
+}
+
+
+
+
+
+@media(min-width: 760px) and (max-width: 1079px) {
+  .popup {
+    &__btn {
+      width: 200px;
+    }
+  }
+}
+
+
+
+@media(min-width: 1px) and (max-width: 759px) {
+  .popup {
+
+    &__header {
+      font-size: @fz-big-middle;
+      line-height: 30px;
+    }
+    &__text {
+      font-size: 16px;
+    }
+      &__btn {
+      width: 100px;
+    }
+  }
+}
