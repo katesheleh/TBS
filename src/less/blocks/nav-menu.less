@@ -31,6 +31,7 @@
     font-weight: 400;
     text-decoration: none;
     letter-spacing: .5px;
+    .transition;
     &:after {
       position: absolute;
       content: "";
@@ -40,6 +41,7 @@
       right: 0;
       height: 1px;
       background-color: @border-dark;
+      .transition;
     }
       &:before {
       position: absolute;
@@ -50,6 +52,33 @@
       right: 0;
       height: 1px;
       background-color: @border-lighter;
+      .transition;
+    }
+
+
+
+
+    &:hover {
+      color: @color-decor;
+      &:before {
+        background-color: lighten(@color-decor, 15%);
+      }
+      &:after {
+        background-color: @color-decor;
+      }
+    }
+
+
+
+
+    &:active {
+      color: darken(@color-decor, 15%);
+      &:before {
+        background-color: darken(@color-decor, 15%);
+      }
+      &:after {
+        background-color: @color-decor;
+      }
     }
   }
 
@@ -110,16 +139,20 @@
     &:after {
       display: none;
     }
-    // &:after {
-    //   position: absolute;
-    //   content: "";
-    //   top: 50px;
-    //   bottom: 0;
-    //   left: 0;
-    //   right: 0;
-    //   height: 1px;
-    //   background-color: @bg-light;
-    // }
+
+
+
+    &:hover {
+      color: @color-light;
+
+      &:before {
+        display: none;
+      }
+
+      &:after {
+        display: none;
+      }
+    }
 
     &:active {
       opacity: .3;
@@ -281,16 +314,17 @@
     &:after {
       display: none;
     }
-    // &:after {
-    //   position: absolute;
-    //   content: "";
-    //   top: 50px;
-    //   bottom: 0;
-    //   left: 0;
-    //   right: 0;
-    //   height: 1px;
-    //   background-color: @bg-light;
-    // }
+    &:hover {
+      color: @color-light;
+
+      &:before {
+        display: none;
+      }
+
+      &:after {
+        display: none;
+      }
+    }
 
     &:active {
       opacity: .3;

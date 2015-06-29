@@ -8,12 +8,27 @@
   color: @color-base;
   border: none;
   text-decoration: none;
+  .transition;
+
+  &:hover {
+    background-color: darken(@color-light, 12%);
+  }
+  &:active {
+    background-color: darken(@color-light, 17%);
+  }
 
 
 
   &--color {
     background-color: @bg-attend-light;
     color: @color-light;
+
+    &:hover {
+      background-color: darken(@bg-attend-light, 7%);
+    }
+    &:active {
+      background-color: darken(@bg-attend-light, 14%);
+    }
   }
 }
 

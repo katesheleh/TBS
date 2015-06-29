@@ -1,18 +1,46 @@
 .popup {
   font-family: @ff-base;
+  background-color: @bg-base;
+  background-image: url(../img/bg-main.png);
+  background-repeat: repeat;
+
+
   &__header {
     color: @color-base;
     line-height: 35px;
   }
+
+
+
   &__text {
     color: @color-base;
   }
-    &__btn {
+
+
+
+
+  &__btn {
     width: 300px;
     padding: 9px 19px 9px 19px;
     background-color: @bg-success;
     border: none;
     color: @color-light;
+    outline: none;
+
+
+
+    &:hover {
+      background-color: darken(@bg-success, 10%);
+      outline: none;
+    }
+
+
+
+
+    &:active {
+      background-color: darken(@bg-success, 15%);
+      outline: none;
+    }
   }
 }
 

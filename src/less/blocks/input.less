@@ -1,0 +1,118 @@
+.input {
+  position: relative;
+  z-index: 1;
+  vertical-align: top;
+  display: block;
+  overflow: hidden;
+  width: 302px;
+  background-color: @bg-attend-dark;
+  border: 2px solid @border-light;
+  margin-right: 30px;
+  outline: none;
+  .transition;
+      &:hover {
+      background-color: darken(@bg-attend-dark, 5%);
+      border-color: darken(@border-light, 15%);
+      cursor: pointer;
+    }
+
+
+
+  &__field {
+    display: block;
+    float: right;
+    padding: 0 10px;
+    border: none;
+    border-radius: 0;
+    background: @bg-base;
+    color: @color-base;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 60%;
+    height: 100%;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
+
+
+
+
+
+  &__label {
+    float: right;
+    padding: 0 10px;
+    color: #6a7989;
+    font-weight: bold;
+    font-size: 18px;
+    z-index: 10;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    cursor: text;
+    -webkit-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
+
+
+
+  &__label-content {
+    position: relative;
+    display: block;
+    padding: 9px 0 7px 0;
+    width: 100%;
+    color: @color-light;
+    font-weight: 400;
+  }
+
+
+  &__field:focus,
+  &--filled .input__field {
+    outline: none;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    -webkit-transition-delay: 0.06s;
+    transition-delay: 0.06s;
+  }
+
+  &__field:focus + .input__label,
+  &--filled .input__label  {
+    -webkit-transform: translate3d(60%, 0, 0);
+    transform: translate3d(60%, 0, 0);
+    pointer-events: none;
+  }
+
+
+  &__field:focus + .input__label {
+    background-color: darken(@bg-attend-dark, 5%);
+    border-color: darken(@border-light, 15%);
+    .transition;
+  }
+}
+
+@media(min-width: 760px) and (max-width: 1079px) {
+  .input {
+    margin-right: 20px;
+    &__label {
+      font-size: 16px;
+    }
+  }
+}
+
+
+@media(min-width: 1px) and (max-width: 759px) {
+  .input {
+    width: 300px;
+      margin-right: 0;
+      margin-bottom: 20px;
+    &__label {
+    }
+  }
+}
