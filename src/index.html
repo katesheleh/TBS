@@ -265,21 +265,62 @@
   </div>
   <script src="js/build/scripts.js"></script>
   <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-  <script>
-
+  <!--<script>
     ymaps.ready(init);
-      var myMap;
+
+    function init () {
+    var myMap = new ymaps.Map('ymap', {
+            center: [59.96267206, 30.29443062],
+            zoom: 16,
+            controls: []
+        });
+
+
+    myMap.controls
+
+      .add('zoomControl', {
+        float: 'none',
+        position: {
+        left: 10,
+        bottom: 30
+      }
+    })
+
+
+      .add('geolocationControl', {
+        float: 'none',
+        position: {
+        left: 10,
+        bottom: 95
+      }
+    })
+
+      .add('routeEditor', {
+        float: 'none',
+        position: {
+        right: 103,
+        top: 10
+      }
+    })
+
+
+      .add('trafficControl');
 
 
 
-      function init(){
-      var map = new ymaps.Map("ymap", {
-        center: [59.96267206, 30.29443062],
-        zoom: 16,
-        type: 'yandex#map'
-      });
-    }
-  </script>
+    myMap.controls.add(
+    new ymaps.control.SearchControl({
+        options: {
+            provider: 'yandex#publicMap',
+            useMapBounds: true
+        }
+      })
+    );
+
+    // myMap.controls.add('trafficControl');
+
+}
+  </script>-->
 
   <script src="_assets/jquery-1.11.1.min.js"></script>
   <script src="_assets/jquery.pixlayout.js"></script>

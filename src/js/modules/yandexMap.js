@@ -1,34 +1,3 @@
-var example = (function() {
-
-  var example = {
-    init: function(){
-      console.log('hey there!');
-    }
-  };
-
-  return example;
-}());
-
-var menuHamburger = (function() {
-
-  var menuHamburger = {
-    init: function(){
-      // nav .js-menu
-      // main link .js-menu-control
-      var menuControl = document.querySelector(".js-menu-control"),
-      menu = document.querySelector(".js-menu");
-
-    menuControl.addEventListener("click", function(ev){
-    ev.preventDefault();
-    //menu.classList.toggle("opened");
-    document.body.classList.toggle("mobile-menu-opened");
-    }, false);
-    }
-  };
-
-  return menuHamburger;
-}());
-
 var yandexMap = (function() {
 
   var yandexMap = {
@@ -92,8 +61,3 @@ var yandexMap = (function() {
 
   return yandexMap;
 }());
-
-
-  document.querySelector('.js-menu-control') && menuHamburger.init();
-
-  document.querySelector('.map') && yandexMap.init();
