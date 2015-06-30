@@ -378,7 +378,7 @@ require('load-grunt-tasks')(grunt);
   grunt.registerTask('make', [
     'svg',
     'png',
-    'csscomb',
+    // 'csscomb', //hmmm its buggy
     'styles',
     'scripts',
     'fit',
@@ -387,7 +387,7 @@ require('load-grunt-tasks')(grunt);
 
 
   grunt.registerTask('default', [
-    'csscomb',
+    // 'csscomb', //hmmm its buggy
     'styles',
     'scripts',
     'watch'
