@@ -7,4 +7,4 @@
 
   document.querySelector('.form') && formdecor.init();
 
-  document.querySelector('.nav-menu') && smoothScrolling.init();
+  smoothScrolling.init();
