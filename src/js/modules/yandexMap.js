@@ -4,6 +4,7 @@ var yandexMap = (function() {
 
     init: function(){
 
+    if (typeof ymaps === 'undefined') return;
 
     ymaps.ready(init);
 
