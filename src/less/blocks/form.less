@@ -49,11 +49,23 @@
     .input {
       width: 320px;
       margin-right: 0;
-      margin-bottom: 10px;
+      margin-bottom: 25px;
+      border-radius: 3px;
+      border: 1px solid @bg-attend-dark;
+    }
+
+
+
+    .input__field:focus + .input__label {
+      background-color: darken(@bg-attend-dark, 5%);
+      border-color: darken(@bg-attend-dark, 15%);
     }
 
     .button {
       width: 320px;
+      padding-top: 11px;
+      padding-bottom: 9px;
+      border-radius: 3px;
     }
   }
 }

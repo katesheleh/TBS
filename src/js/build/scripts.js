@@ -204,11 +204,6 @@ var smoothScrolling = (function() {
 
   var smoothScrolling = {
     init: function(){
-<<<<<<< HEAD
-=======
-
-    $(function() {
->>>>>>> master
       $('a[href*=#]:not([href=#])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
           var target = $(this.hash);
@@ -221,12 +216,7 @@ var smoothScrolling = (function() {
           }
         }
       });
-<<<<<<< HEAD
     }
-=======
-    });
-  }
->>>>>>> master
   };
 
   return smoothScrolling;
