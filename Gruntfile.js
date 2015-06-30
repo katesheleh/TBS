@@ -82,7 +82,7 @@ require('load-grunt-tasks')(grunt);
 
     concat: {
       app: {
-        src: ['<%= config.src %>/js/modules/*.js', 'src/js/scripts.js'],
+        src: ['<%= config.src %>/js/plugins/*.js','<%= config.src %>/js/modules/*.js', 'src/js/scripts.js'],
         dest: '<%= config.src %>/js/build/scripts.js'
       }
     },
