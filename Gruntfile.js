@@ -82,7 +82,7 @@ require('load-grunt-tasks')(grunt);
 
     concat: {
       app: {
-        src: ['<%= config.src %>/js/modules/*.js', 'src/js/scripts.js'],
+        src: ['<%= config.src %>/js/plugins/*.js','<%= config.src %>/js/modules/*.js', 'src/js/scripts.js'],
         dest: '<%= config.src %>/js/build/scripts.js'
       }
     },
@@ -100,10 +100,10 @@ require('load-grunt-tasks')(grunt);
 
   watch: {
 
-      // scripts: {
-      //   files: ['<%= config.src %>/js/**/*.js'],
-      //   tasks: ['scripts']
-      // },
+      scripts: {
+        files: ['<%= config.src %>/js/**/*.js', '!<%= config.src %>/js/build/*.js'],
+        tasks: ['scripts']
+      },
 
 
       styles: {
@@ -118,7 +118,7 @@ require('load-grunt-tasks')(grunt);
               src : [
                   '<%= config.src %>/css/*.css',
                   '<%= config.src %>/*.html',
-                  // '<%= config.src %>/js/build/*.js',
+                  '<%= config.src %>/js/build/*.js'
               ]
           },
           options: {
