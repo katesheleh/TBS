@@ -86,9 +86,9 @@ require('load-grunt-tasks')(grunt);
         dest: '<%= config.src %>/js/build/scripts.js'
       }
     },
-
-    /*-----  End of SCRIPTS  ------*/
 //'<%= config.src %>/js/plugins/*.js',
+    /*-----  End of SCRIPTS  ------*/
+
 
 
 

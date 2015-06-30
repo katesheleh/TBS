@@ -1,6 +1,8 @@
 var smoothScrolling = (function() {
 
   var smoothScrolling = {
+    init: function(){
+
     $(function() {
       $('a[href*=#]:not([href=#])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -15,6 +17,7 @@ var smoothScrolling = (function() {
         }
       });
     });
+  }
   };
 
   return smoothScrolling;
