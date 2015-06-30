@@ -109,6 +109,31 @@ var popupRemodal = (function() {
   return popupRemodal;
 }());
 
+var smoothScrolling = (function() {
+
+  var smoothScrolling = {
+      $(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+
+
+
+  };
+
+  return smoothScrolling;
+}());
+
 var yandexMap = (function() {
 
   var yandexMap = {
@@ -181,3 +206,5 @@ var yandexMap = (function() {
   document.querySelector('.remodal') && popupRemodal.init();
 
   document.querySelector('.form') && formdecor.init();
+
+  document.querySelector('.nav-menu') && smoothScrolling.init();

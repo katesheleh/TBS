@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Beauty Total School</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/lib/grunticon.loader.js"></script>
@@ -37,6 +38,9 @@
             <li class="nav-menu__item">
               <a href="#feedback" class="nav-menu__link">Отзывы</a>
             </li>
+              <li class="nav-menu__item">
+              <a href="#contacts" class="nav-menu__link">Контакты</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -50,12 +54,12 @@
           <div class="row">
             <div class="column">
               <div class="purport">
-                <div class="purport__img-wrap">
-                  <img src="img/pic-girl-1.jpg" alt="макияж" class="purport__img"></div>
-                <h4 class="purport__header purport__header--indent">
-                  <span class="purport__header-part">1-е занятие</span>
-                  макияж
-                </h4>
+                  <div class="purport__img-wrap">
+                    <img src="img/pic-girl-1.jpg" alt="макияж" class="purport__img"></div>
+                  <h4 class="purport__header purport__header--indent">
+                    <span class="purport__header-part">1-е занятие</span>
+                    макияж
+                  </h4>
                 <p class="purport__text">
                   Ты будешь самой привлекательной и яркой партнершей. Всегда отличные фото с вечеринок! Комплименты от партнеров гарантированы.
                 </p>
@@ -72,15 +76,16 @@
             </div>
             <div class="column">
               <div class="purport">
-                <div class="purport__img-wrap">
-                  <img src="img/pic-girl-2.jpg" alt="прическа" class="purport__img"></div>
-                <h4 class="purport__header purport__header--indent">
-                  <span class="purport__header-part">2-е занятие</span>
-                  прическа
-                </h4>
+                  <div class="purport__img-wrap">
+                    <img src="img/pic-girl-2.jpg" alt="прическа" class="purport__img"></div>
+                  <h4 class="purport__header purport__header--indent">
+                    <span class="purport__header-part">2-е занятие</span>
+                    прическа
+                  </h4>
                 <p class="purport__text">
                   Волосы красиво уложены и&nbsp;не&nbsp;мешают&nbsp;танцевать. Прическа держится до утра!&nbsp;Окружающие оценят.
                 </p>
+
               </div>
               <div class="detail">
                 <p class="detail__price detail__icon--star">1500 &#8381;</p>
@@ -94,12 +99,12 @@
             </div>
             <div class="column">
               <div class="purport">
-                <div class="purport__img-wrap">
-                  <img src="img/pic-girl-3.jpg" alt="стиль" class="purport__img"></div>
-                <h4 class="purport__header purport__header--indent">
-                  <span class="purport__header-part">3-е занятие</span>
-                  стиль
-                </h4>
+                  <div class="purport__img-wrap">
+                    <img src="img/pic-girl-3.jpg" alt="стиль" class="purport__img"></div>
+                  <h4 class="purport__header purport__header--indent">
+                    <span class="purport__header-part">3-е занятие</span>
+                    стиль
+                  </h4>
                 <p class="purport__text">
                   Отличный стиль на тренировке, сногшибательные наряды на вечеринках - это просто! Привлеки к себе внимание партнеров и фотографов!
                 </p>
@@ -254,7 +259,7 @@
         </div>
       </div>
     </main>
-    <footer class="page-footer">
+    <footer class="page-footer" id="contacts">
       <div class="page-footer__wrap">
         <div class="container">
           <h3 class="page-footer__header">Контакты</h3>
@@ -286,14 +291,29 @@
       <br>
       <button class="popup__btn" data-remodal-action="confirm" class="remodal-confirm">OK</button>
     </div>
-    <!-- end of popup -->
-    </div>
+    <!-- end of popup --> </div>
   <script src="js/lib/classie.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery/dist/jquery.min.js"><\/script>')</script>
-  <script src="js/lib/remodal.min.js"></script>
-  <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-  <script src="js/build/scripts.js"></script>
+<script src="js/lib/remodal.min.js"></script>
+<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="js/build/scripts.js"></script>
+<script>
+  $(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+</script>
 <script src="_assets/jquery-1.11.1.min.js"></script>
 <script src="_assets/jquery.pixlayout.js"></script>
 <script>

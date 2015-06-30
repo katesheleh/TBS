@@ -6,3 +6,5 @@
   document.querySelector('.remodal') && popupRemodal.init();
 
   document.querySelector('.form') && formdecor.init();
+
+  document.querySelector('.nav-menu') && smoothScrolling.init();
