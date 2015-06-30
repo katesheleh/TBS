@@ -11,10 +11,25 @@ require('load-grunt-tasks')(grunt);
     },
 
 
+    /*==============================
+    =            STYLES            =
+    ==============================*/
+
+    csscomb: {
+      options: {
+        config: '.csscomb.json'
+      },
+      style: {
+        expand: true,
+        src: ["<%= config.src %>/less/**/*.less"]
+      }
+    },
+
+
     less: {
       style: {
         files: {
-          'src/css/style.css': 'src/less/style.less'
+          '<%= config.src %>/css/style.css': '<%= config.src %>/less/style.less'
         }
       },
        dist: {
@@ -25,36 +40,100 @@ require('load-grunt-tasks')(grunt);
     },
 
 
-
-
-
-    watch: {
-      styles: {
-        files: ['<%= config.src %>/less/**/*.less'],
-        tasks: ['less','notify:less'],
-        options: {
-            spawn: false,
-            livereload: true
-        }
+    autoprefixer: {
+      options: {
+        browsers: ['last 2 version', 'ie 9']
       },
+      file: {
+        src: '<%= config.src %>/css/style.css'
+      }
+    },
 
-      livereload: {
-        files: ['<%= config.src %>/*.html'],
-        tasks: ['notify:html'],
-        options: {
-          livereload: true
+
+    cmq: {
+      style: {
+        files: {
+          '<%= config.dist %>/css/style.css': ['<%= config.dist %>/css/style.css']
         }
-      },
+      }
+    },
+
+
+    cssmin: {
+      style: {
+        options: {
+          keepSpecialComments: 0,
+          report: 'gzip'
+        },
+        files: {
+          '<%= config.dist %>/css/style.min.css': ['<%= config.dist %>/css/style.css']
+        }
+      }
+    },
+
+
+    /*-----  End of STYLES  ------*/
+
+
+
+    /*===============================
+    =            SCRIPTS            =
+    ===============================*/
+
+    concat: {
+      app: {
+        src: ['<%= config.src %>/js/modules/*.js', 'src/js/scripts.js'],
+        dest: '<%= config.src %>/js/build/scripts.js'
+      }
+    },
+
+    /*-----  End of SCRIPTS  ------*/
+
+
+
+
+
+
+  /*=============================
+  =            WATCH            =
+  =============================*/
+
+  watch: {
 
       // scripts: {
       //   files: ['<%= config.src %>/js/**/*.js'],
-      //   tasks: ['notify:js'],
-      //   options: {
-      //     spawn: false,
-      //     livereload: true
-      //   }
-      // }
+      //   tasks: ['scripts']
+      // },
+
+
+      styles: {
+        files: ['<%= config.src %>/less/**/*.less'],
+        tasks: ['styles']
+      }
     },
+
+    browserSync: {
+      dev: {
+          bsFiles: {
+              src : [
+                  '<%= config.src %>/css/*.css',
+                  '<%= config.src %>/*.html',
+                  // '<%= config.src %>/js/build/*.js',
+              ]
+          },
+          options: {
+              watchTask: true,
+              server: '<%= config.src %>'
+          }
+      }
+    },
+
+
+  /*-----  End of WATCH  ------*/
+
+
+
+
 
 
 
@@ -137,36 +216,7 @@ require('load-grunt-tasks')(grunt);
     },
 
 
-    autoprefixer: {
-      options: {
-        browsers: ['last 2 version', 'ie 9']
-      },
-      file: {
-        src: '<%= config.dist %>/css/style.css'
-      }
-    },
 
-
-    cmq: {
-      style: {
-        files: {
-          '<%= config.dist %>/css/style.css': ['<%= config.dist %>/css/style.css']
-        }
-      }
-    },
-
-
-    cssmin: {
-      style: {
-        options: {
-          keepSpecialComments: 0,
-          report: 'gzip'
-        },
-        files: {
-          '<%= config.dist %>/css/style.min.css': ['<%= config.dist %>/css/style.css']
-        }
-      }
-    },
 
 
 
@@ -216,26 +266,6 @@ require('load-grunt-tasks')(grunt);
       }
     },
 
-
-
-    csscomb: {
-      options: {
-        config: '.csscomb.json'
-      },
-      style: {
-        expand: true,
-        src: ["<%= config.src %>/less/**/*.less"]
-      }
-    },
-
-
-
-    concat: {
-      app: {
-        src: ['<%= config.src %>/js/modules/*.js', 'src/js/scripts.js'],
-        dest: '<%= config.src %>/js/build/scripts.js'
-      }
-    },
 
 
 
@@ -316,17 +346,17 @@ require('load-grunt-tasks')(grunt);
 
 
 
-  grunt.registerTask('fit', [
-   'clean:finish',
-   'copy:make',
-   'less:dist',
-   'autoprefixer',
-   'cmq',
-   'cssmin',
-   'imagemin',
-   'prettify',
-   'htmlmin'
+  grunt.registerTask('styles',[
+    'less:style',
+    'autoprefixer',
+    'notify:less'
   ]);
+
+
+  grunt.registerTask('scripts',[
+    'concat'
+  ]);
+
 
   grunt.registerTask('svg', [
     'clean:svg',
@@ -335,11 +365,44 @@ require('load-grunt-tasks')(grunt);
     'notify:svg'
   ]);
 
+
    grunt.registerTask('png', [
     'clean:png',
     'sprite',
     'notify:png'
   ]);
+
+
+  grunt.registerTask('fit', [
+   'clean:finish',
+   'copy:make',
+   'cmq',
+   'cssmin',
+   'imagemin',
+   'prettify'
+  ]);
+
+
+  grunt.registerTask('make', [
+    'svg',
+    'png',
+    // 'csscomb', //hmmm its buggy
+    'styles',
+    'scripts',
+    'fit',
+    'htmlmin'
+  ]);
+
+
+  grunt.registerTask('default', [
+    // 'csscomb', //hmmm its buggy
+    'styles',
+    'scripts',
+    'browserSync',
+    'watch'
+  ]);
+
+
 
   grunt.registerTask('test', ['lintspaces:test']);
 };
