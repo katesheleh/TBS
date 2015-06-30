@@ -197,7 +197,7 @@
           <div class="container">
             <h3 class="support__header page-content__header">Мы с радостью ответим на все вопросы</h3>
             <span class="support__text page-content__text page-content__text--color">+7 921 567 78 89</span>
-            <a href="#modal" class="button" type="submit">Заказать звонок</a>
+            <a href="#modal-form" class="button" type="submit">Заказать звонок</a>
           </div>
         </div>
         <div class="container">
@@ -309,7 +309,8 @@
       </div>
       <!-- end of popup -->
     <!-- popup-form -->
-      <div class="remodal popup" data-remodal-id="modal">
+      <div class="remodal popup" data-remodal-id="modal-form">
+      <h1 class="popup__header">Заполните форму ниже</h1>
         <form action="#" class="form form--popup" method="get">
           <span class="input">
             <input class="input__field" type="text" id="form-name" placeholder="имя" required>
@@ -332,6 +333,8 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="js/plugins/classie.js"></script>
+    <script src="js/plugins/remodal.min.js"></script>
 
     <!--<script type="js/lib/zepto.min.js"></script>
   -->
@@ -340,7 +343,7 @@
   <script src="_assets/jquery.pixlayout.js"></script>
   <script>
     $(function(){
-      if(true) {
+      if(!true) {
         $.pixlayout({
         src: "_assets/tbs-jpg.jpg",
         opacity: 0.4,

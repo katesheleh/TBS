@@ -82,13 +82,13 @@ require('load-grunt-tasks')(grunt);
 
     concat: {
       app: {
-        src: ['<%= config.src %>/js/plugins/*.js','<%= config.src %>/js/modules/*.js', 'src/js/scripts.js'],
+        src: ['<%= config.src %>/js/modules/*.js', 'src/js/scripts.js'],
         dest: '<%= config.src %>/js/build/scripts.js'
       }
     },
 
     /*-----  End of SCRIPTS  ------*/
-
+//'<%= config.src %>/js/plugins/*.js',
 
 
 
@@ -198,17 +198,15 @@ require('load-grunt-tasks')(grunt);
       make: {
         files: [{
           expand: true,
-          cwd: 'src',
+          cwd: '<%= config.src %>',
           src: [
             'img/**/*',
             '!css/sprite.css',
             'css/**',
             'index.html',
-            'form.html',
-            'blog.html',
-            'post.html',
             'js/build/*.js',
-            'js/lib/*.js'
+            'js/lib/*.js',
+            'fonts/*.otf'
           ],
           dest: '<%= config.dist %>',
         }]
@@ -332,16 +330,16 @@ require('load-grunt-tasks')(grunt);
           },
         }
       }
-    },
-
-    sprite:{
-      all: {
-        src: '<%= config.src %>/_png/*.png',
-        dest: '<%= config.src %>/img/spritesheet.png',
-        destCss: '<%= config.src %>/css/sprite.css',
-        padding: 20
-      }
     }
+
+    // sprite:{
+    //   all: {
+    //     src: '<%= config.src %>/_png/*.png',
+    //     dest: '<%= config.src %>/img/spritesheet.png',
+    //     destCss: '<%= config.src %>/css/sprite.css',
+    //     padding: 20
+    //   }
+    // }
   });
 
 
@@ -385,7 +383,7 @@ require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('make', [
     'svg',
-    'png',
+    //'png',
     // 'csscomb', //hmmm its buggy
     'styles',
     'scripts',
