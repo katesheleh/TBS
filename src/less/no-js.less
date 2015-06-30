@@ -1,6 +1,71 @@
 // if js disabled
 .no-js {
 
+
+  .input {
+    vertical-align: top;
+    display: block;
+    overflow: hidden;
+    width: 302px;
+    background-color: @bg-base;
+    border: 2px solid @border-light;
+    color: @color-base;
+    margin-right: 30px;
+    outline: none;
+
+
+      &:hover {
+      background-color: darken(@bg-base, 5%);
+      border-color: darken(@border-light, 15%);
+      cursor: text;
+    }
+
+
+
+  &__field {
+    display: block;
+    float: right;
+    padding: 0 10px;
+    border: none;
+    border-radius: 0;
+    background: @bg-base;
+    color: @color-base;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 60%;
+    height: 100%;
+    &::-webkit-input-placeholder {
+      color: @color-base;
+      background-color: @bg-base;
+    }
+  }
+
+  &__label {
+    display: none;
+  }
+}
+
+@media(min-width: 760px) and (max-width: 1079px) {
+  .input {
+    margin-right: 20px;
+    &__label {
+      font-size: 16px;
+    }
+  }
+}
+
+
+@media(min-width: 1px) and (max-width: 759px) {
+  .input {
+    width: 300px;
+      margin-right: 0;
+      margin-bottom: 20px;
+    &__label {
+    }
+  }
+}
+
 }
 
 // if js enabled

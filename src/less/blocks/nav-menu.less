@@ -30,7 +30,7 @@
     color: @color-base;
     font-weight: 400;
     text-decoration: none;
-    letter-spacing: .5px;
+    //letter-spacing: -.5px;
     .transition;
     &:after {
       position: absolute;
@@ -60,6 +60,8 @@
 
     &:hover {
       color: @color-decor;
+      top: 3px;
+      .transition;
       &:before {
         background-color: lighten(@color-decor, 15%);
       }
