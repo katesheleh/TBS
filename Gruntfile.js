@@ -346,7 +346,7 @@ require('load-grunt-tasks')(grunt);
   ]);
 
   grunt.registerTask('styles',[
-    'less"style',
+    'less:style',
     'autoprefixer',
     'notify:less'
   ]);
