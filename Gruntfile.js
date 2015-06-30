@@ -15,6 +15,16 @@ require('load-grunt-tasks')(grunt);
     =            STYLES            =
     ==============================*/
 
+    csscomb: {
+      options: {
+        config: '.csscomb.json'
+      },
+      style: {
+        expand: true,
+        src: ["<%= config.src %>/less/**/*.less"]
+      }
+    },
+
 
     less: {
       style: {
@@ -62,9 +72,24 @@ require('load-grunt-tasks')(grunt);
     },
 
 
-
-
     /*-----  End of STYLES  ------*/
+
+
+
+    /*===============================
+    =            SCRIPTS            =
+    ===============================*/
+
+    concat: {
+      app: {
+        src: ['<%= config.src %>/js/modules/*.js', 'src/js/scripts.js'],
+        dest: '<%= config.src %>/js/build/scripts.js'
+      }
+    },
+
+    /*-----  End of SCRIPTS  ------*/
+
+
 
 
 
@@ -235,26 +260,6 @@ require('load-grunt-tasks')(grunt);
 
 
 
-    csscomb: {
-      options: {
-        config: '.csscomb.json'
-      },
-      style: {
-        expand: true,
-        src: ["<%= config.src %>/less/**/*.less"]
-      }
-    },
-
-
-
-    concat: {
-      app: {
-        src: ['<%= config.src %>/js/modules/*.js', 'src/js/scripts.js'],
-        dest: '<%= config.src %>/js/build/scripts.js'
-      }
-    },
-
-
 
     clean: {
       svg: [
@@ -333,24 +338,16 @@ require('load-grunt-tasks')(grunt);
 
 
 
-  grunt.registerTask('fit', [
-   'clean:finish',
-   'copy:make',
-   'less:dist',
-   'autoprefixer',
-   'cmq',
-   'cssmin',
-   'imagemin',
-   'prettify',
-   'htmlmin'
-  ]);
-
   grunt.registerTask('styles',[
     'less:style',
     'autoprefixer',
     'notify:less'
   ]);
 
+
+  grunt.registerTask('scripts',[
+    'concat'
+  ]);
 
 
   grunt.registerTask('svg', [
@@ -360,11 +357,43 @@ require('load-grunt-tasks')(grunt);
     'notify:svg'
   ]);
 
+
    grunt.registerTask('png', [
     'clean:png',
     'sprite',
     'notify:png'
   ]);
+
+
+  grunt.registerTask('fit', [
+   'clean:finish',
+   'copy:make',
+   'cmq',
+   'cssmin',
+   'imagemin',
+   'prettify'
+  ]);
+
+
+  grunt.registerTask('make', [
+    'svg',
+    'png',
+    'csscomb',
+    'styles',
+    'scripts',
+    'fit',
+    'htmlmin'
+  ]);
+
+
+  grunt.registerTask('default', [
+    'csscomb',
+    'styles',
+    'scripts',
+    'watch'
+  ]);
+
+
 
   grunt.registerTask('test', ['lintspaces:test']);
 };
