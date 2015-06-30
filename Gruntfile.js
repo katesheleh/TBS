@@ -11,10 +11,15 @@ require('load-grunt-tasks')(grunt);
     },
 
 
+    /*==============================
+    =            STYLES            =
+    ==============================*/
+
+
     less: {
       style: {
         files: {
-          'src/css/style.css': 'src/less/style.less'
+          '<%= config.src %>/css/style.css': '<%= config.src %>/less/style.less'
         }
       },
        dist: {
@@ -25,13 +30,54 @@ require('load-grunt-tasks')(grunt);
     },
 
 
+    autoprefixer: {
+      options: {
+        browsers: ['last 2 version', 'ie 9']
+      },
+      file: {
+        src: '<%= config.src %>/css/style.css'
+      }
+    },
+
+
+    cmq: {
+      style: {
+        files: {
+          '<%= config.dist %>/css/style.css': ['<%= config.dist %>/css/style.css']
+        }
+      }
+    },
+
+
+    cssmin: {
+      style: {
+        options: {
+          keepSpecialComments: 0,
+          report: 'gzip'
+        },
+        files: {
+          '<%= config.dist %>/css/style.min.css': ['<%= config.dist %>/css/style.css']
+        }
+      }
+    },
+
+
+
+
+    /*-----  End of STYLES  ------*/
+
+
+
+
+
+
 
 
 
     watch: {
       styles: {
         files: ['<%= config.src %>/less/**/*.less'],
-        tasks: ['less','notify:less'],
+        tasks: ['styles'],
         options: {
             spawn: false,
             livereload: true
@@ -137,36 +183,7 @@ require('load-grunt-tasks')(grunt);
     },
 
 
-    autoprefixer: {
-      options: {
-        browsers: ['last 2 version', 'ie 9']
-      },
-      file: {
-        src: '<%= config.dist %>/css/style.css'
-      }
-    },
 
-
-    cmq: {
-      style: {
-        files: {
-          '<%= config.dist %>/css/style.css': ['<%= config.dist %>/css/style.css']
-        }
-      }
-    },
-
-
-    cssmin: {
-      style: {
-        options: {
-          keepSpecialComments: 0,
-          report: 'gzip'
-        },
-        files: {
-          '<%= config.dist %>/css/style.min.css': ['<%= config.dist %>/css/style.css']
-        }
-      }
-    },
 
 
 
@@ -327,6 +344,14 @@ require('load-grunt-tasks')(grunt);
    'prettify',
    'htmlmin'
   ]);
+
+  grunt.registerTask('styles',[
+    'less"style',
+    'autoprefixer',
+    'notify:less'
+  ]);
+
+
 
   grunt.registerTask('svg', [
     'clean:svg',
