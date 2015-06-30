@@ -94,38 +94,46 @@ require('load-grunt-tasks')(grunt);
 
 
 
+  /*=============================
+  =            WATCH            =
+  =============================*/
 
-
-
-
-
-    watch: {
-      styles: {
-        files: ['<%= config.src %>/less/**/*.less'],
-        tasks: ['styles'],
-        options: {
-            spawn: false,
-            livereload: true
-        }
-      },
-
-      livereload: {
-        files: ['<%= config.src %>/*.html'],
-        tasks: ['notify:html'],
-        options: {
-          livereload: true
-        }
-      },
+  watch: {
 
       // scripts: {
       //   files: ['<%= config.src %>/js/**/*.js'],
-      //   tasks: ['notify:js'],
-      //   options: {
-      //     spawn: false,
-      //     livereload: true
-      //   }
-      // }
+      //   tasks: ['scripts']
+      // },
+
+
+      styles: {
+        files: ['<%= config.src %>/less/**/*.less'],
+        tasks: ['styles']
+      }
     },
+
+    browserSync: {
+      dev: {
+          bsFiles: {
+              src : [
+                  '<%= config.src %>/css/*.css',
+                  '<%= config.src %>/*.html',
+                  // '<%= config.src %>/js/build/*.js',
+              ]
+          },
+          options: {
+              watchTask: true,
+              server: '<%= config.src %>'
+          }
+      }
+    },
+
+
+  /*-----  End of WATCH  ------*/
+
+
+
+
 
 
 
@@ -390,6 +398,7 @@ require('load-grunt-tasks')(grunt);
     // 'csscomb', //hmmm its buggy
     'styles',
     'scripts',
+    'browserSync',
     'watch'
   ]);
 
