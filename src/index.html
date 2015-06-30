@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lte IE 9 ]><html lang="ru" class="no-js lte-ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="ru" class="no-js"><!--<![endif]-->
 <head>
   <meta charset="UTF-8">
   <title>Beauty Total School</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/lib/grunticon.loader.js"></script>
   <script>
-      grunticon(["css/icons.data.svg.css", "css/icons.data.png.css", "css/icons.fallback.css"], grunticon.svgLoadedCallback );
+    document.documentElement.className =
+    document.documentElement.className.replace("no-js","js");
+
+    grunticon(["css/icons.data.svg.css", "css/icons.data.png.css", "css/icons.fallback.css"], grunticon.svgLoadedCallback );
   </script>
   <noscript>
     <link href="css/icons.fallback.css" rel="stylesheet"></noscript>
