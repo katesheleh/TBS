@@ -307,8 +307,28 @@
         <br>
         <button class="popup__btn" data-remodal-action="confirm" class="remodal-confirm">OK</button>
       </div>
+      <!-- end of popup -->
+    <!-- popup-form -->
+      <div class="remodal popup" data-remodal-id="modal">
+        <form action="#" class="form form--popup" method="get">
+          <span class="input">
+            <input class="input__field" type="text" id="form-name" placeholder="имя" required>
+            <label class="input__label" for="form-name">
+              <span class="input__label-content">имя</span>
+            </label>
+          </span>
+          <span class="input">
+            <input class="input__field" type="text" id="form-phone" placeholder="телефон" required>
+            <label class="input__label" for="form-phone">
+              <span class="input__label-content">телефон</span>
+            </label>
+          </span>
+          <a type="submit" class="button button--color" href="#modal">Успеть записаться</a>
+        </form>
+      </div>
+
     </div>
-    <!-- end of popup -->
+    <!-- end of popup-form -->
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
