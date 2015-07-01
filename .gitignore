@@ -7,6 +7,5 @@ prepros.cfg
 *.map
 src/css/*.css
 src/less/components/*.less
-dist
 src/_assets
 *.todo
