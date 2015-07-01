@@ -24,11 +24,22 @@
 //   height: 13px;
 // }
 
+@media(min-width: 801px) and (max-width: 1079px) {
+  .map {
+
+    &__yandex {
+      width: 480px;
+      height: 279px;
+      margin: 0 auto;
+      border: 1px solid @border-light;
+    }
+  }
+}
 
 
 
 
-@media(min-width: 541px) and (max-width: 1079px) {
+@media(min-width: 541px) and (max-width: 800px) {
   .map {
     width: 100%;
     order: 2;
