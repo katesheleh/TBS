@@ -142,19 +142,25 @@
             <h3 class="discount__header page-content__header page-content__header--color">При оплате трех занятий &mdash; скидка 25%</h3>
             <p class="discount__text">1500+1500+1500 = 3000 &#8381;</p>
             <form action="#" class="form" method="get">
-              <span class="input">
-                <input class="input__field" type="text" id="form-name" placeholder="имя" required>
-                <label class="input__label" for="form-name">
-                  <span class="input__label-content">имя</span>
-                </label>
-              </span>
-              <span class="input">
-                <input class="input__field" type="text" id="form-phone" placeholder="телефон" required>
-                <label class="input__label" for="form-phone">
-                  <span class="input__label-content">телефон</span>
-                </label>
-              </span>
-              <a type="submit" class="button button--color" href="#modal">Успеть записаться</a>
+              <div class="form__block-wrap form__block-wrap--left">
+                <span class="input">
+                  <input class="input__field" type="text" id="form-name" placeholder="имя" required>
+                  <label class="input__label" for="form-name">
+                    <span class="input__label-content">имя</span>
+                  </label>
+                </span>
+              </div>
+              <div class="form__block-wrap form__block-wrap--middle">
+                <span class="input">
+                  <input class="input__field" type="text" id="form-phone" placeholder="телефон" required>
+                  <label class="input__label" for="form-phone">
+                    <span class="input__label-content">телефон</span>
+                  </label>
+                </span>
+              </div>
+              <div class="form__block-wrap form__block-wrap--right">
+                <a type="submit" class="button button--color form__button" href="#modal">Успеть записаться</a>
+              </div>
             </form>
           </div>
         </div>
@@ -197,7 +203,7 @@
           <div class="container">
             <h3 class="support__header page-content__header">Мы с радостью ответим на все вопросы</h3>
             <span class="support__text page-content__text page-content__text--color">+7 921 567 78 89</span>
-            <a href="#modal-form" class="button" type="submit">Заказать звонок</a>
+            <a href="#modal-form" class="button button--position" type="submit">Заказать звонок</a>
           </div>
         </div>
         <div class="container">
@@ -308,9 +314,9 @@
         <button class="popup__btn" data-remodal-action="confirm" class="remodal-confirm">OK</button>
       </div>
       <!-- end of popup -->
-    <!-- popup-form -->
+      <!-- popup-form -->
       <div class="remodal popup" data-remodal-id="modal-form">
-      <h1 class="popup__header popup__header--form">Заполните, пожалуйста, форму ниже:</h1>
+        <h1 class="popup__header popup__header--form">Заполните, пожалуйста, форму ниже:</h1>
         <form action="#" class="form form--popup" method="get">
           <span class="input">
             <input class="input__field" type="text" id="user-name" placeholder="имя" required>
@@ -324,22 +330,21 @@
               <span class="input__label-content">телефон</span>
             </label>
           </span>
-          <a type="submit" class="button button--color" href="#modal">Успеть записаться</a>
+          <a type="submit" class="button button--color form__button" href="#modal">Успеть записаться</a>
         </form>
       </div>
 
     </div>
     <!-- end of popup-form -->
-  <script src="http://yastatic.net/jquery/2.1.4/jquery.min.js"></script>
-  <script>
-      window.jQuery || document.write('<script src="js/lib/jquery2.1.4.min.js"><\/script>')
-  </script>
+    <script src="http://yastatic.net/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+      window.jQuery || document.write('<script src="js/lib/jquery2.1.4.min.js"><\/script>')</script>
   <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
   <script src="js/build/scripts.js"></script>
 
-  <!-- <script src="_assets/jquery.pixlayout.js"></script> -->
-  <script>
+  <script src="_assets/jquery.pixlayout.js"></script>
+<script>
     $(function(){
       if(!true) {
         $.pixlayout({
