@@ -1,8 +1,9 @@
 .button {
   display: block;
-  margin: 0 auto;
+  float: right;
+  margin-right: 0;
   width: 302px;
-  padding: 9px 19px 7px 19px;
+  padding: 12px 19px 11px 19px;
   background-color: @color-light;
   .placeholder;
   color: @color-base;
@@ -20,6 +21,7 @@
 
 
   &--color {
+    float: right;
     background-color: @bg-attend-light;
     color: @color-light;
 
@@ -30,7 +32,35 @@
       background-color: darken(@bg-attend-light, 14%);
     }
   }
+
+
+
+  &--position {
+    float: none;
+    margin: 0 auto;
+  }
 }
+
+
+
+
+
+
+@media(min-width: 801px) and (max-width: 1079px) {
+  .button {
+    width: 220px;
+    float: right;
+
+  &--position {
+    width: 302px;
+    float: none;
+    margin: 0 auto;
+  }
+  }
+}
+
+
+
 
 
 
@@ -40,6 +70,8 @@
     width: 320px;
     padding-top: 11px;
     padding-bottom: 9px;
+    margin: 0 auto;
+    float: none;
   }
 }
 
@@ -50,5 +82,7 @@
   .button {
     width: 300px;
     padding-bottom: 7px;
+    float: none;
+    margin: 0 auto;
   }
 }
