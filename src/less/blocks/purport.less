@@ -95,22 +95,61 @@
 
 
 
-@media(min-width: 760px) and (max-width: 1079px) {
+@media(min-width: 541px) and (max-width: 1079px) {
   .purport {
-    min-height: 348px;
-    padding: 0 15px;
+    width: 500px;
+    min-height: 1px;
+    padding: 0;
+    margin: 0 auto;
 
 
     &--length {
-      min-height: 290px;
+      min-height: 1px;
     .purport__text {
       margin-bottom: 15px;
     }
   }
 
 
+
+  &--tablet {
+    margin-bottom: 50px;
+  }
+
+
+
+    &__img-wrap {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 15px auto 0 auto;
+      float: left;
+    }
+
+
+
+
+    &__img-wrap--big {
+      margin-top: 10px;
+    }
+
+
+
+
     &__header {
+      padding-left: 10px;
       font-size: @fz-middle;
+    }
+
+
+    &__header--indent {
+      margin-bottom: 5px;
+    }
+
+
+    &__header-part {
+      display: inline;
     }
 
 
@@ -120,7 +159,10 @@
 
 
     &__text {
+      width: 400px;
+      float: left;
       font-size: 16px;
+      padding-left: 15px;
     }
 
 
@@ -133,7 +175,7 @@
 
 
 
-@media(min-width: 1px) and (max-width: 759px) {
+@media(min-width: 320px) and (max-width: 540px) {
   .purport {
     width: 280px;
     margin-left: auto;

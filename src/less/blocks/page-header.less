@@ -6,8 +6,9 @@
   background-size: 100% auto;
 }
 
-@media(min-width: 760px) and (max-width: 1079px) {
+@media(min-width: 541px) and (max-width: 1079px) {
   .page-header {
+    background-size: cover;
     padding-top: 0;
     height: 250px;
 
@@ -28,7 +29,7 @@
 
 
 
-@media(min-width: 1px) and (max-width: 759px) {
+@media(min-width: 320px) and (max-width: 540px) {
   .page-header {
     padding-top: 0;
     height: 270px;
@@ -45,11 +46,8 @@
 
       &__headline {
         position: relative;
-        background-color: white;
+        background-color: @bg-attend-dark;
         height: 75px;
-        background-color: @bg-base;
-        background-image: url(../img/bg-main.png);
-        background-repeat: repeat;
       }
     }
 }
