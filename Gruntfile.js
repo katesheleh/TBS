@@ -82,11 +82,17 @@ require('load-grunt-tasks')(grunt);
 
     concat: {
       app: {
-        src: ['<%= config.src %>/js/plugins/*.js','<%= config.src %>/js/modules/*.js', 'src/js/scripts.js'],
+        src: ['<%= config.src %>/js/plugins/*.js','<%= config.src %>/js/modules/*.js', 'src/js/main.js'],
         dest: '<%= config.src %>/js/build/scripts.js'
       }
     },
-//'<%= config.src %>/js/plugins/*.js',
+
+    uglify: {
+      app: {
+        src: '<%= config.dist %>/js/build/scripts.js',
+        dest: '<%= config.dist %>/js/build/scripts.min.js'
+      }
+    },
     /*-----  End of SCRIPTS  ------*/
 
 
@@ -130,6 +136,48 @@ require('load-grunt-tasks')(grunt);
 
 
   /*-----  End of WATCH  ------*/
+
+
+
+  /*============================
+  =            HTML            =
+  ============================*/
+
+  embed: {
+    options: {
+      threshold: '100KB'
+    },
+    some_target: {
+      files: {
+        '<%= config.dist %>/index.embed.html': '<%= config.dist %>/index.html'
+      }
+    }
+  },
+
+  replace: {
+    dist: {
+      src: '<%= config.dist %>/*.html',
+      expand: true,
+      overwrite: true,
+      replacements: [
+      {
+
+        from: /href=\"css\/style.css\"/g,
+        to: 'href="css/style.min.css"'
+      },{
+        from: /<script src=\"js\/build\/plugins.js/g,
+        to: '<script src="js/build/plugins.min.js'
+      },{
+        from: /<script src=\"js\/build\/scripts.js/g,
+        to: '<script src="js/build/scripts.min.js'
+      }
+      ]
+    }
+  },
+
+  /*-----  End of HTML  ------*/
+
+
 
 
 
@@ -216,25 +264,6 @@ require('load-grunt-tasks')(grunt);
 
 
 
-
-
-    htmlmin: {
-      options: {
-        removeComments: true,
-        collapseWhitespace: true,
-        collapseBooleanAttributes: true,
-        caseSensitive: true,
-        keepClosingSlash: false
-      },
-      html: {
-        files: {
-          '<%= config.dist %>/index.min.html': '<%= config.dist %>/index.html',     //'destination': 'source'
-          '<%= config.dist %>/form.min.html': '<%= config.dist %>/form.html',
-          '<%= config.dist %>/blog.min.html': '<%= config.dist %>/blog.html',
-          '<%= config.dist %>/post.min.html': '<%= config.dist %>/post.html'
-        }
-      }
-    },
 
 
 
@@ -377,18 +406,19 @@ require('load-grunt-tasks')(grunt);
    'cmq',
    'cssmin',
    'imagemin',
+   'uglify',
+   'replace',
    'prettify'
   ]);
 
 
   grunt.registerTask('make', [
     'svg',
-    //'png',
     // 'csscomb', //hmmm its buggy
     'styles',
     'scripts',
     'fit',
-    'htmlmin'
+    'embed'
   ]);
 
 

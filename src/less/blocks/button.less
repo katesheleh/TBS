@@ -1,8 +1,6 @@
 .button {
   display: block;
-  float: right;
-  margin-right: 0;
-  width: 302px;
+  width: 100%;
   padding: 12px 19px 11px 19px;
   background-color: @color-light;
   .placeholder;
@@ -10,18 +8,20 @@
   border: none;
   text-decoration: none;
   .transition;
+  outline: none;
 
   &:hover {
     background-color: darken(@color-light, 12%);
+    outline: none;
   }
   &:active {
     background-color: darken(@color-light, 17%);
+    outline: none;
   }
 
 
 
   &--color {
-    float: right;
     background-color: @bg-attend-light;
     color: @color-light;
 
@@ -36,8 +36,14 @@
 
 
   &--position {
-    float: none;
+    width: 302px;
     margin: 0 auto;
+  }
+
+
+
+  &--popup {
+    border-radius: 3px;
   }
 }
 
@@ -48,14 +54,11 @@
 
 @media(min-width: 801px) and (max-width: 1079px) {
   .button {
-    width: 220px;
-    float: right;
 
-  &--position {
-    width: 302px;
-    float: none;
-    margin: 0 auto;
-  }
+    &--position {
+      width: 302px;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -67,22 +70,34 @@
 
 @media(min-width: 541px) and (max-width: 800px) {
   .button {
-    width: 320px;
     padding-top: 11px;
     padding-bottom: 9px;
-    margin: 0 auto;
-    float: none;
+
+
+
+
+    &--position {
+      width: 302px;
+      margin: 0 auto;
+    }
   }
 }
 
 
 
 
-@media(min-width: 320px) and (max-width: 540px) {
+@media(max-width: 540px) {
   .button {
-    width: 300px;
     padding-bottom: 7px;
-    float: none;
     margin: 0 auto;
+
+
+
+
+
+    &--position {
+      width: 302px;
+      margin: 0 auto;
+    }
   }
 }

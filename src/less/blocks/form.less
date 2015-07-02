@@ -1,87 +1,41 @@
 .form {
-  padding: 0 43px 45px 43px;
+
+  @offset: 10px;
+
+  .cf;
+  padding: 0 (43px - @offset) 45px (43px - @offset);
+
   display: block;
+
+
+  &--popup {
+    width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 
 
   &__block-wrap {
+    min-height: 70px;
     width: 33.33%;
     float: left;
+    padding: 0 @offset;
   }
 
 
 
-  &__block-wrap--left {
-    .input {
-      float: left;
-      margin-left: 0;
-    }
+  &__block-wrap--popup {
+    width: 100%;
   }
 
 
 
-  &__input {
-    width: 302px;
-    padding: 9px 19px 7px 19px;
-    background-color: @bg-attend-dark;
-    border: 2px solid @border-light;
-    // margin-right: 30px;
-    outline: none;
-    .transition;
-
-    &:hover {
-      background-color: darken(@bg-attend-dark, 5%);
-      border-color: darken(@border-light, 15%);
-      cursor: pointer;
-    }
-    &:focus {
-      background-color: white;
-      color: @color-decor;
-    }
-
-
-
-
-     &::-webkit-input-placeholder {
-      .placeholder;
-      color: @color-light;
-    }
-
-    &:-moz-placeholder {
-      .placeholder;
-      color: @color-light;
-    }
-  }
-
-
-
-    &--popup {
-    width: 320px;
-    padding: 0 0 30px 0;
-    margin-left: auto;
-    margin-right: auto;
-
-    .input {
-      width: 320px;
-      margin-right: 0;
-      margin-bottom: 20px;
-      border-radius: 3px;
-      border: 1px solid @bg-attend-dark;
-    }
-
-
-
-    .input__field:focus + .input__label {
-      background-color: darken(@bg-attend-dark, 5%);
-      border-color: darken(@bg-attend-dark, 15%);
-    }
-
-    .button {
-      width: 320px;
-      padding-top: 11px;
-      padding-bottom: 9px;
-      border-radius: 3px;
-    }
+  &__label-error {
+    display: block;
+    padding: 0 2px 0;
+    text-align: left;
+    color: @color-error;
   }
 }
 
@@ -89,7 +43,28 @@
 
 
 @media(min-width: 801px) and (max-width: 1079px) {
+  .form {
+    padding: 0 0 30px 0;
 
+
+
+
+    &__label-error {
+      font-size: 15px;
+    }
+
+
+
+
+    &--popup {
+      .form__label-error {
+        font-size: @fz-base;
+      }
+    }
+
+
+
+  }
 }
 
 
@@ -104,16 +79,9 @@
 
 
     &__block-wrap {
-      width: 100%;
+      width: 460px;
+      padding: 0;
       float: none;
-    }
-
-    &__block-wrap--left {
-      .input {
-        float: none;
-        margin-left: auto;
-        margin-right: auto;
-      }
     }
   }
 }
@@ -121,21 +89,32 @@
 
 
 
-@media(min-width: 320px) and (max-width: 540px) {
+@media(max-width: 540px) {
   .form {
     padding: 0 0 30px 0;
 
-      &__block-wrap {
-      width: 100%;
+    &__block-wrap {
+      width: 300px;
+      padding: 0;
       float: none;
     }
 
-    &__block-wrap--left {
-      .input {
-        float: none;
-        margin-left: auto;
-        margin-right: auto;
-      }
+
+
+    &__block-wrap--popup {
+      width: 100%;
+    }
+
+
+
+    &--popup {
+      width: 100%;
+    }
+
+
+
+    &__label-error {
+      font-size: 15px;
     }
   }
 }
