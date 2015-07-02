@@ -736,6 +736,13 @@ html {
 	font-style: normal;
 }
 
+@font-face {
+	font-family: ALS Rubl;
+	src: url(../fonts/rubl-regular.ttf);
+	font-weight: normal;
+	font-style: normal;
+}
+
 .row:after {
 	content: "";
 	clear: both;
@@ -832,16 +839,17 @@ html {
 
 .nav-menu__link:hover {
 	color: #f06d6e;
-	top: 3px;
 	transition: all 0.2s ease-in-out;
 }
 
 .nav-menu__link:hover:before {
 	background-color: #f7b2b3;
+	top: 22px;
 }
 
 .nav-menu__link:hover:after {
 	background-color: #f06d6e;
+	top: 23px;
 }
 
 .nav-menu__link:active {
@@ -1061,6 +1069,10 @@ html {
 	color: #ffffff;
 	margin: 0 0 56px 0;
 	font-weight: 300;
+}
+
+.discount__ru {
+	font-family: "ALS Rubl";
 }
 
 .form {
@@ -2048,7 +2060,6 @@ html {
 }
 
 .nav-menu__link:hover {
-	top: 0;
 	color: #ffffff;
 }
 
