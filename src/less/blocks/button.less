@@ -1,24 +1,6 @@
-
-
-
-
-// TODO:
-// - кнопки должны получить w100% на всех экранах +
-// - никакого флоата не нужно +
-// - никаких маргинов не нужно +
-// — это все должно контролироваться обертками формы +
-// - исключение — отдельно стоящая кнопка заказать звонок +
-// [AA] 2015/07/02
-
-
 .button {
   display: block;
-  // float: right;
-  // [AA] 2015/07/02
-  //margin-right: 0;
-  // width: 302px;
   width: 100%;
-  // [AA] 2015/07/02
   padding: 12px 19px 11px 19px;
   background-color: @color-light;
   .placeholder;
@@ -40,8 +22,6 @@
 
 
   &--color {
-    // float: right;
-    // [AA] 2015/07/02
     background-color: @bg-attend-light;
     color: @color-light;
 
@@ -62,8 +42,6 @@
 
 
 
-      // TODO:
-    // -  и спецмодификатор для кнопки в button.less +
   &--popup {
     border-radius: 3px;
   }
