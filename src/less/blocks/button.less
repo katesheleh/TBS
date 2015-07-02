@@ -3,11 +3,11 @@
 
 
 // TODO:
-// - кнопки должны получить w100% на всех экранах
-// - никакого флоата не нужно
-// - никаких маргинов не нужно
-// — это все должно контролироваться обертками формы
-// - исключение — отдельно стоящая кнопка заказать звонок
+// - кнопки должны получить w100% на всех экранах +
+// - никакого флоата не нужно +
+// - никаких маргинов не нужно +
+// — это все должно контролироваться обертками формы +
+// - исключение — отдельно стоящая кнопка заказать звонок +
 // [AA] 2015/07/02
 
 
@@ -15,7 +15,7 @@
   display: block;
   // float: right;
   // [AA] 2015/07/02
-  margin-right: 0;
+  //margin-right: 0;
   // width: 302px;
   width: 100%;
   // [AA] 2015/07/02
@@ -26,12 +26,15 @@
   border: none;
   text-decoration: none;
   .transition;
+  outline: none;
 
   &:hover {
     background-color: darken(@color-light, 12%);
+    outline: none;
   }
   &:active {
     background-color: darken(@color-light, 17%);
+    outline: none;
   }
 
 
@@ -53,8 +56,16 @@
 
 
   &--position {
-    float: none;
+    width: 302px;
     margin: 0 auto;
+  }
+
+
+
+      // TODO:
+    // -  и спецмодификатор для кнопки в button.less +
+  &--popup {
+    border-radius: 3px;
   }
 }
 
@@ -65,14 +76,11 @@
 
 @media(min-width: 801px) and (max-width: 1079px) {
   .button {
-    width: 220px;
-    float: right;
 
-  &--position {
-    width: 302px;
-    float: none;
-    margin: 0 auto;
-  }
+    &--position {
+      width: 302px;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -84,11 +92,16 @@
 
 @media(min-width: 541px) and (max-width: 800px) {
   .button {
-    // width: 320px;
     padding-top: 11px;
     padding-bottom: 9px;
-    margin: 0 auto;
-    float: none;
+
+
+
+
+    &--position {
+      width: 302px;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -97,9 +110,16 @@
 
 @media(max-width: 540px) {
   .button {
-    // width: 300px;
     padding-bottom: 7px;
-    float: none;
     margin: 0 auto;
+
+
+
+
+
+    &--position {
+      width: 302px;
+      margin: 0 auto;
+    }
   }
 }

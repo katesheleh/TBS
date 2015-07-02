@@ -140,17 +140,11 @@
         <div class="discount">
           <div class="container">
             <h3 class="discount__header page-content__header page-content__header--color">При оплате трех занятий &mdash; скидка 25%</h3>
-            <p class="discount__text">1500+1500+1500 = 3000 &#8381;</p>
-
-
-
+            <p class="discount__text">1500+1500+1500 = 3000 <span class="discount__ru">р</span></p>
             <form action="response.json" class="form js-validate-form" method="POST">
-
-
               <div class="form__block-wrap js-validate-wrap">
-
                 <span class="input">
-                  <input class="input__field" type="text" id="form-name" name="name" >
+                  <input class="input__field" type="text" id="form-name" name="name" required>
                   <label class="input__label" for="form-name">
                     <span class="input__label-content">имя</span>
                   </label>
@@ -159,15 +153,14 @@
 
               <div class="form__block-wrap js-validate-wrap">
                 <span class="input">
-                  <input class="input__field js-mask-phone" type="text" id="form-phone" name="phone" >
+                  <input class="input__field js-mask-phone" type="text" id="form-phone" name="phone" required>
                   <label class="input__label" for="form-phone">
                     <span class="input__label-content">телефон</span>
                   </label>
                 </span>
               </div>
 
-
-              <div class="form__block-wrap">
+              <div class="form__block-wrap js-validate-wrap">
                 <button type="submit" class="button button--color form__button">Успеть записаться</button>
               </div>
             </form>
@@ -328,24 +321,24 @@
         <h1 class="popup__header popup__header--form">Заполните, пожалуйста, форму ниже:</h1>
         <form action="response.json" class="form form--popup js-validate-form" method="POST">
 
-          <div class="form__block-wrap js-validate-wrap">
-            <span class="input">
+          <div class="form__block-wrap form__block-wrap--popup js-validate-wrap">
+            <span class="input input--popup">
               <input class="input__field" type="text" id="user-name" name="name" required>
               <label class="input__label" for="user-name">
                 <span class="input__label-content">имя</span>
               </label>
             </span>
           </div>
-          <div class="form__block-wrap js-validate-wrap">
-            <span class="input input--indent">
+          <div class="form__block-wrap form__block-wrap--popup js-validate-wrap">
+            <span class="input input--popup input--indent">
               <input class="input__field js-mask-phone" type="text" id="user-phone" name="phone" required>
               <label class="input__label" for="user-phone">
                 <span class="input__label-content">телефон</span>
               </label>
             </span>
           </div>
-          <div class="form__block-wrap js-validate-wrap">
-            <button type="submit" class="button button--color form__button">Успеть записаться</button>
+          <div class="form__block-wrap form__block-wrap--popup js-validate-wrap">
+            <button type="submit" class="button button--color button--popup form__button">Успеть записаться</button>
           </div>
         </form>
       </div>
