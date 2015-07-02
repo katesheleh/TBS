@@ -1,21 +1,35 @@
+
+
+
 .input {
   position: relative;
   z-index: 1;
   vertical-align: top;
   display: block;
   overflow: hidden;
-  width: 302px;
+  width: 100%;
   background-color: @bg-attend-dark;
   border: 2px solid @border-light;
-  margin-left: auto;
-  margin-right: auto;
   outline: none;
   .transition;
-      &:hover {
+
+
+
+    &:hover {
       background-color: darken(@bg-attend-dark, 5%);
       border-color: darken(@border-light, 15%);
       cursor: pointer;
     }
+
+
+
+
+
+    &.error {
+      animation: shake .6s;
+    }
+
+
 
 
 
@@ -60,23 +74,9 @@
     transition: transform 0.5s;
     -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-    &::-webkit-input-placeholder {
-      display: none;
-      color: transparent;
-    }
-    &::-moz-placeholder {
-      display: none;
-      color: transparent;
-    }
-    :-moz-placeholder {
-      display: none;
-      color: transparent;
-    }
-    &:-ms-input-placeholder {
-      display: none;
-      color: transparent;
-    }
   }
+
+
 
 
 
@@ -90,6 +90,9 @@
   }
 
 
+
+
+
   &__field:focus,
   &--filled .input__field {
     outline: none;
@@ -99,6 +102,11 @@
     transition-delay: 0.06s;
   }
 
+
+
+
+
+
   &__field:focus + .input__label,
   &--filled .input__label  {
     -webkit-transform: translate3d(60%, 0, 0);
@@ -107,52 +115,40 @@
   }
 
 
+
+
+
+
   &__field:focus + .input__label {
     background-color: darken(@bg-attend-dark, 5%);
     border-color: darken(@border-light, 15%);
     .transition;
   }
-}
 
 
 
 
 
+  &--popup {
+    border-radius: 3px;
+    border: 1px solid @bg-attend-dark;
 
-@media(min-width: 801px) and (max-width: 1079px) {
-  .input {
-    width: 220px;
+
+    .input__field:focus + .input__label {
+      background-color: darken(@bg-attend-dark, 5%);
+      border-color: darken(@bg-attend-dark, 15%);
+    }
   }
 }
 
 
-
-
-
 @media(min-width: 541px) and (max-width: 800px) {
   .input {
-      width: 320px;
-      margin: 0 auto 20px auto;
+
     &__label {
       font-size: 16px;
     }
   }
 }
-
-
-@media(min-width: 320px) and (max-width: 540px) {
-  .input {
-    width: 300px;
-    margin-right: 0;
-    margin-bottom: 20px;
-    &__label {
-    }
-  }
-}
-
-
-
-
-
 
 
