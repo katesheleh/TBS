@@ -1,14 +1,27 @@
+
+
+// TODO:
+// - кнопки должны получить w100% на всех экранах
+// - никакого флоата не нужно
+// - никаких маргинов не нужно
+// — это все должно контролироваться обертками формы
+// - исключение — отдельно стоящая кнопка заказать звонок
+// - выравнять код
+// [AA] 2015/07/02
+
+
 .input {
   position: relative;
   z-index: 1;
   vertical-align: top;
   display: block;
   overflow: hidden;
-  width: 302px;
+  // width: 302px;
+  width: 100%;
   background-color: @bg-attend-dark;
   border: 2px solid @border-light;
-  margin-left: auto;
-  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
   outline: none;
   .transition;
       &:hover {
@@ -16,6 +29,10 @@
       border-color: darken(@border-light, 15%);
       cursor: pointer;
     }
+
+  &.error {
+    animation: shake .6s;
+  }
 
 
 
@@ -119,11 +136,11 @@
 
 
 
-@media(min-width: 801px) and (max-width: 1079px) {
-  .input {
-    width: 220px;
-  }
-}
+// @media(min-width: 801px) and (max-width: 1079px) {
+//   .input {
+//     width: 220px;
+//   }
+// }
 
 
 
@@ -131,8 +148,8 @@
 
 @media(min-width: 541px) and (max-width: 800px) {
   .input {
-      width: 320px;
-      margin: 0 auto 20px auto;
+      // width: 320px;
+      // margin: 0 auto 20px auto;
     &__label {
       font-size: 16px;
     }
@@ -142,9 +159,9 @@
 
 @media(max-width: 540px) {
   .input {
-    width: 300px;
-    margin-right: 0;
-    margin-bottom: 20px;
+    // width: 300px;
+    // margin-right: 0;
+    // margin-bottom: 20px;
     &__label {
     }
   }

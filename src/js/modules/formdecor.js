@@ -29,8 +29,9 @@ var formdecor = (function() {
         }
 
         function onInputBlur( ev ) {
-          if( ev.target.value.trim() === '' ) {
-            classie.remove( ev.target.parentNode, 'input--filled' );
+          var t = ev.target;
+          if( t.value.trim() === '' || (t.getAttribute('data-mask') === t.value)) {
+            classie.remove( t.parentNode, 'input--filled' );
           }
         }
     }
