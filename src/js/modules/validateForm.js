@@ -1,6 +1,7 @@
 var validateForm = (function() {
 
   // .js-validate-form
+  // .js-validate-wrap
   var validateForm = {
     init: function(){
 
@@ -17,19 +18,71 @@ var validateForm = (function() {
 
       $('.js-validate-form').each(function(index, el) {
         $(el).validate({
-          // debug: true,
+          debug: true,
           rules: myRules,
           messages: myMessages,
           errorPlacement:function(error, element) {
-            // error.addClass('input__error');
+            error.addClass('form__label-error');
             var cont = element.closest('.js-validate-wrap');
-            cont.append(error)
-          }
+            cont.append(error);
+          },
+          highlight: function(element, errorClass, validClass) {
+            $(element).parent().addClass(errorClass).removeClass(validClass);
+            $(element).addClass(errorClass).removeClass(validClass);
+          },
+          unhighlight: function(element, errorClass, validClass) {
+            $(element).parent().addClass(validClass).removeClass(errorClass);
+            $(element).addClass(validClass).removeClass(errorClass);
+          },
+          submitHandler: readyToSubmit
         });
 
       });
     }
   };
+
+  function readyToSubmit(form) {
+    if (!form) return;
+
+    var url = encodeURIComponent(form.getAttribute('action'));
+    // alert('Первая строка\nВторая строка');
+    // TODO:
+    // -  заменить GET на POST (ломается из-за browsersync)
+
+    $.ajax({
+      url: url,
+      type: 'GET',
+      dataType: 'json',
+      data: $(form).serialize(),
+    })
+    .done(function(data) {
+      sendMessage(data.title, data.message);
+    })
+    .fail(function() {
+      sendMessage("Произошла ошибка", "Пожалуйста, повторите отправку. В случае неудачи свяжитесь с нами по телефону.");
+    })
+    .always(function() {
+      // console.log("complete");
+    });
+
+  }
+
+  function sendMessage(title, message) {
+    var $popup = $('[data-remodal-id=modal-response]'),
+        popup = $popup.remodal(),
+        $title = $popup.find('.js-response-title'),
+        $message = $popup.find('.js-response-message'),
+        out = '';
+    if ($popup.length) {
+        if (title) $title.html(title);
+        if (message) $message.html(message);
+        popup.open();
+      } else {
+        if (title) out += title;
+        if (message) out += '\n' + message;
+        alert(out);
+      }
+  }
 
   // validator localization
   //

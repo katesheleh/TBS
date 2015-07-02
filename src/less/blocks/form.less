@@ -1,70 +1,30 @@
 .form {
-  padding: 0 43px 45px 43px;
+
+  @offset: 10px;
+
+  .cf;
+  padding: 0 (43px - @offset) 45px (43px - @offset);
+  // [AA] 2015/07/02
+
   display: block;
 
 
-
-  &__block-wrap {
-    width: 33.33%;
-    float: left;
-  }
-
-
-
-  &__block-wrap--left {
-    .input {
-      float: left;
-      margin-left: 0;
-    }
-  }
-
-
-
-  &__input {
-    width: 302px;
-    padding: 9px 19px 7px 19px;
-    background-color: @bg-attend-dark;
-    border: 2px solid @border-light;
-    // margin-right: 30px;
-    outline: none;
-    .transition;
-
-    &:hover {
-      background-color: darken(@bg-attend-dark, 5%);
-      border-color: darken(@border-light, 15%);
-      cursor: pointer;
-    }
-    &:focus {
-      background-color: white;
-      color: @color-decor;
-    }
-
-
-
-
-     &::-webkit-input-placeholder {
-      .placeholder;
-      color: @color-light;
-    }
-
-    &:-moz-placeholder {
-      .placeholder;
-      color: @color-light;
-    }
-  }
-
-
-
-    &--popup {
+  // TODO:
+  // - сделать размеры и отступы в попапе только за счет form__block-wrap
+  // - предусмотреть через минимальную высоту form__block-wrap место для вывода ошибок
+  // (при сообщении об ошибке форма не должна дергаться). Стили и размеры на твой вкус, у тебя классно получается
+  &--popup {
     width: 320px;
     padding: 0 0 30px 0;
     margin-left: auto;
     margin-right: auto;
 
+
+
+    // TODO:
+    // - изменить бордеры через модификаторы input, в файле input.less
+    // - никакого наследования для разных бэм блоков
     .input {
-      width: 320px;
-      margin-right: 0;
-      margin-bottom: 20px;
       border-radius: 3px;
       border: 1px solid @bg-attend-dark;
     }
@@ -76,20 +36,42 @@
       border-color: darken(@bg-attend-dark, 15%);
     }
 
+
+    // TODO:
+    // -  и спецмодификатор для кнопки в button.less
     .button {
-      width: 320px;
       padding-top: 11px;
       padding-bottom: 9px;
       border-radius: 3px;
     }
   }
+
+
+
+  &__block-wrap {
+    width: 33.33%;
+    float: left;
+    padding: 0 @offset;
+  }
+
+
+
+  &__label-error {
+    display: block;
+    padding: 8px 2px 0;
+    text-align: left;
+    color: @color-error;
+  }
+
 }
 
 
 
 
 @media(min-width: 801px) and (max-width: 1079px) {
-
+  .form {
+    padding: 0 0 30px 0;
+  }
 }
 
 
@@ -104,16 +86,11 @@
 
 
     &__block-wrap {
-      width: 100%;
+      // width: 100%;
+      width: 460px;
+      padding: 0;
+      margin: 0 auto 20px;
       float: none;
-    }
-
-    &__block-wrap--left {
-      .input {
-        float: none;
-        margin-left: auto;
-        margin-right: auto;
-      }
     }
   }
 }
@@ -126,16 +103,10 @@
     padding: 0 0 30px 0;
 
       &__block-wrap {
-      width: 100%;
+      width: 300px;
+      padding: 0;
+      margin: 0 auto 20px;
       float: none;
-    }
-
-    &__block-wrap--left {
-      .input {
-        float: none;
-        margin-left: auto;
-        margin-right: auto;
-      }
     }
   }
 }
