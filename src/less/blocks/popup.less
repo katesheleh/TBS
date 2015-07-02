@@ -4,6 +4,16 @@
   background-image: url(../img/bg-main.png);
   background-repeat: repeat;
 
+  &--touch {
+    background: transparent;
+    padding: 20px 0;
+    display: none;
+
+    .touch & {
+      display: block;
+    }
+  }
+
 
   &__header {
     color: @color-base;

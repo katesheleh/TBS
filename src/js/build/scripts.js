@@ -1523,18 +1523,43 @@ var menuHamburger = (function() {
   return menuHamburger;
 }());
 
+var showPopup = (function() {
+  'use strict';
+
+  // .js-show-popup
+  var showPopup = {
+    init: function(){
+      $('.js-show-popup').on('click', onBtnClick);
+    }
+  };
+
+  function onBtnClick(ev) {
+    var $btn = $(this),
+        $modal = $('[data-remodal-id="'+$btn.data('modal')+'"]');
+
+    if (is_touch_device() || !$modal.length) return;
+
+    ev.preventDefault();
+    $modal.remodal().open();
+
+
+  }
+
+  return showPopup;
+}());
+
 var smoothScrolling = (function() {
 
   var smoothScrolling = {
     init: function(){
-      $('a[href*=#]:not([href=#])').click(function() {
+      $('a[href*=#]:not([href=#]):not(.js-show-popup)').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
           var target = $(this.hash);
           target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
           if (target.length) {
             $('html,body').animate({
-              scrollTop: target.offset().top
-            }, 1000);
+              scrollTop: target.offset().top - 120
+            }, 800);
             return false;
           }
         }
@@ -1732,6 +1757,8 @@ jQuery(document).ready(function($) {
   document.querySelector('.form') && formdecor.init();
 
   document.querySelector('.js-validate-form') && validateForm.init();
+
+  document.querySelector('.js-show-popup') && showPopup.init();
 
   $('.js-mask-phone').attr('data-mask',"(___) ___-__-__").mask("(999) 999-99-99");
 
