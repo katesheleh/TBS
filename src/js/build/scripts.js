@@ -79,8 +79,6 @@ if ( typeof define === 'function' && define.amd ) {
 
 })( window );
 
-<<<<<<< HEAD
-=======
 /*
     jQuery Masked Input Plugin
     Copyright (c) 2007 - 2014 Josh Bush (digitalbush.com)
@@ -1453,7 +1451,6 @@ $.extend($.fn, {
 });
 
 }));
->>>>>>> dce94baba0977cb367af26a7249f0bbd5f5e731f
 /*
  *  Remodal - v1.0.1
  *  Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
@@ -1525,11 +1522,6 @@ var menuHamburger = (function() {
 
   return menuHamburger;
 }());
-<<<<<<< HEAD
-
-var popupRemodal = (function() {
-=======
->>>>>>> dce94baba0977cb367af26a7249f0bbd5f5e731f
 
 var showPopup = (function() {
   'use strict';
@@ -1584,8 +1576,6 @@ var smoothScrolling = (function() {
   return smoothScrolling;
 }());
 
-<<<<<<< HEAD
-=======
 var validateForm = (function() {
 
   // .js-validate-form
@@ -1699,7 +1689,6 @@ var validateForm = (function() {
   return validateForm;
 }());
 
->>>>>>> dce94baba0977cb367af26a7249f0bbd5f5e731f
 var yandexMap = (function() {
 
   var yandexMap = {
@@ -1765,10 +1754,7 @@ var yandexMap = (function() {
   return yandexMap;
 }());
 
-<<<<<<< HEAD
-=======
 jQuery(document).ready(function($) {
->>>>>>> dce94baba0977cb367af26a7249f0bbd5f5e731f
 
   document.querySelector('.js-menu-control') && menuHamburger.init();
 

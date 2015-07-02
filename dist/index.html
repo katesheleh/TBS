@@ -4,21 +4,28 @@
   <![endif]-->
 <!--[if (gt IE 9)|!(IE)]>
   <!-->
-<html lang="ru" class="no-js">
+<html lang="ru" class="no-js no-touch">
     <!--<![endif]-->
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Beauty Total School</title>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style.min.css">
         <script src="js/lib/grunticon.loader.js"></script>
         <script>
             document.documentElement.className =
                 document.documentElement.className.replace("no-js", "js");
             grunticon(["css/icons.data.svg.css", "css/icons.data.png.css", "css/icons.fallback.css"], grunticon.svgLoadedCallback);
+            function is_touch_device() {
+                return (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+            }
+            if (is_touch_device()) {
+                document.documentElement.className =
+                    document.documentElement.className.replace("no-touch", "touch");
+            }
         </script>
         <noscript>
-            <link href="css/icons.fallback.css" rel="stylesheet">
+            <link href="css/icons.fallback.css" rel="stylesheet" data-embed="false">
         </noscript>
         <!--[if lte IE 9]>
     <script src="js/lib/html5shiv.min.js"></script>
@@ -151,25 +158,25 @@
                         <p class="discount__text">1500+1500+1500 = 3000
                             <span class="discount__ru">р</span>
                         </p>
-                        <form action="#" class="form" method="get">
-                            <div class="form__block-wrap form__block-wrap--left">
+                        <form action="response.json" class="form js-validate-form" method="POST">
+                            <div class="form__block-wrap js-validate-wrap">
                                 <span class="input">
-                                    <input class="input__field" type="text" id="form-name" required>
+                                    <input class="input__field" type="text" id="form-name" name="name" required>
                                     <label class="input__label" for="form-name">
                                         <span class="input__label-content">имя</span>
                                     </label>
                                 </span>
                             </div>
-                            <div class="form__block-wrap form__block-wrap--middle">
+                            <div class="form__block-wrap js-validate-wrap">
                                 <span class="input">
-                                    <input class="input__field" type="text" id="form-phone" required>
+                                    <input class="input__field js-mask-phone" type="text" id="form-phone" name="phone" required>
                                     <label class="input__label" for="form-phone">
                                         <span class="input__label-content">телефон</span>
                                     </label>
                                 </span>
                             </div>
-                            <div class="form__block-wrap form__block-wrap--right">
-                                <a type="submit" class="button button--color form__button" href="#modal">Успеть записаться</a>
+                            <div class="form__block-wrap js-validate-wrap">
+                                <button type="submit" class="button button--color form__button">Успеть записаться</button>
                             </div>
                         </form>
                     </div>
@@ -215,7 +222,7 @@
                     <div class="container">
                         <h3 class="support__header page-content__header">Мы с радостью ответим на все вопросы</h3>
                         <span class="support__text page-content__text page-content__text--color">+7 921 567 78 89</span>
-                        <a href="#modal-form" class="button button--position" type="submit">Заказать звонок</a>
+                        <a href="#touch-form" data-modal="modal-form" class="button button--position js-show-popup" type="submit">Заказать звонок</a>
                     </div>
                 </div>
                 <div class="container">
@@ -324,12 +331,38 @@
                         </div>
                     </div>
                 </div>
-                <div class="social"></div>
+                <div class="popup popup--touch" id="touch-form">
+                    <div class="container">
+                        <h1 class="popup__header popup__header--form">Заполните, пожалуйста, форму ниже:</h1>
+                        <form action="response.json" class="form form--popup js-validate-form" method="POST">
+                            <div class="form__block-wrap form__block-wrap--popup js-validate-wrap">
+                                <span class="input input--popup">
+                                    <input class="input__field" type="text" id="touch-user-name" name="name" required>
+                                    <label class="input__label" for="touch-user-name">
+                                        <span class="input__label-content">имя</span>
+                                    </label>
+                                </span>
+                            </div>
+                            <div class="form__block-wrap form__block-wrap--popup js-validate-wrap">
+                                <span class="input input--popup input--indent">
+                                    <input class="input__field js-mask-phone" type="text" id="touch-user-phone" name="phone" required>
+                                    <label class="input__label" for="touch-user-phone">
+                                        <span class="input__label-content">телефон</span>
+                                    </label>
+                                </span>
+                            </div>
+                            <div class="form__block-wrap form__block-wrap--popup js-validate-wrap">
+                                <button type="submit" class="button button--color button--popup form__button">Успеть записаться</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- <div class="social"></div> -->
             </footer>
             <!-- popup -->
-            <div class="remodal popup" data-remodal-id="modal">
-                <h1 class="popup__header">Заявка отправлена</h1>
-                <p class="popup__text">
+            <div class="remodal popup" data-remodal-id="modal-response">
+                <h1 class="popup__header js-response-title">Заявка отправлена</h1>
+                <p class="popup__text js-response-message">
                     Благодарим, ваша заявка уже поступила к нам. В ближайшее время мы свяжемся с вами.
                 </p>
                 <br>
@@ -339,20 +372,26 @@
             <!-- popup-form -->
             <div class="remodal popup" data-remodal-id="modal-form">
                 <h1 class="popup__header popup__header--form">Заполните, пожалуйста, форму ниже:</h1>
-                <form action="#" class="form form--popup" method="get">
-                    <span class="input">
-                        <input class="input__field" type="text" id="user-name" placeholder="имя" required>
-                        <label class="input__label" for="user-name">
-                            <span class="input__label-content">имя</span>
-                        </label>
-                    </span>
-                    <span class="input input--indent">
-                        <input class="input__field" type="text" id="user-phone" placeholder="телефон" required>
-                        <label class="input__label" for="user-phone">
-                            <span class="input__label-content">телефон</span>
-                        </label>
-                    </span>
-                    <a type="submit" class="button button--color form__button" href="#modal">Успеть записаться</a>
+                <form action="response.json" class="form form--popup js-validate-form" method="POST">
+                    <div class="form__block-wrap form__block-wrap--popup js-validate-wrap">
+                        <span class="input input--popup">
+                            <input class="input__field" type="text" id="popup-name" name="name" required>
+                            <label class="input__label" for="popup-name">
+                                <span class="input__label-content">имя</span>
+                            </label>
+                        </span>
+                    </div>
+                    <div class="form__block-wrap form__block-wrap--popup js-validate-wrap">
+                        <span class="input input--popup input--indent">
+                            <input class="input__field js-mask-phone" type="text" id="popup-phone" name="phone" required>
+                            <label class="input__label" for="popup-phone">
+                                <span class="input__label-content">телефон</span>
+                            </label>
+                        </span>
+                    </div>
+                    <div class="form__block-wrap form__block-wrap--popup js-validate-wrap">
+                        <button type="submit" class="button button--color button--popup form__button">Успеть записаться</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -362,7 +401,7 @@
             window.jQuery || document.write('<script src="js/lib/jquery2.1.4.min.js"><\/script>')
         </script>
         <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-        <script src="js/build/scripts.js"></script>
+        <script src="js/build/scripts.min.js"></script>
         <script src="_assets/jquery.pixlayout.js"></script>
         <script>
             $(function() {
