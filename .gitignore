@@ -6,7 +6,7 @@ prepros.cfg
 *.sublime*
 *.map
 src/less/components/*.less
-dist
+
 src/_assets
 src/css
 src/js/build
