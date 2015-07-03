@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<!--[if lte IE 9 ]>
+<html lang="ru" class="no-js lte-ie9">
+  <![endif]-->
+<!--[if (gt IE 9)|!(IE)]>
+  <!-->
+<html lang="ru" class="no-js no-touch">
+    <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Beauty Total School</title>
+        <link rel="stylesheet" href="css/style.min.css">
+        <script src="js/lib/grunticon.loader.js"></script>
+        <script>
+            document.documentElement.className =
+                document.documentElement.className.replace("no-js", "js");
+            grunticon(["css/icons.data.svg.css", "css/icons.data.png.css", "css/icons.fallback.css"], grunticon.svgLoadedCallback);
+            function is_touch_device() {
+                return (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+            }
+            if (is_touch_device()) {
+                document.documentElement.className =
+                    document.documentElement.className.replace("no-touch", "touch");
+            }
+        </script>
+        <noscript>
+            <link href="css/icons.fallback.css" rel="stylesheet" data-embed="false">
+        </noscript>
+        <!--[if lte IE 9]>
+    <script src="js/lib/html5shiv.min.js"></script>
+    <![endif]-->
+        <!--[if lt IE 9]>
+    <script src="js/lib/es5-shim.min.js"></script>
+    <![endif]-->
+    </head>
+    <body>
+        <div class="page-wrapper">
+            <header class="page-header">
+                <div class="container">
+                    <div class="page-header__headline">
+                        <span href="#" class="logo">
+                            total beauty school
+                            <i class="icon-logo" data-grunticon-embed></i>
+                        </span>
+                        <a class="nav-menu__btn js-menu-control" href="#">
+                            <span>меню</span>
+                        </a>
+                    </div>
+                    <nav class="nav-menu js-menu">
+                        <ul class="nav-menu__list">
+                            <li class="nav-menu__item">
+                                <a href="#schedule" class="nav-menu__link">Расписание курсов</a>
+                            </li>
+                            <li class="nav-menu__item">
+                                <a href="#professores" class="nav-menu__link">Преподаватели</a>
+                            </li>
+                            <li class="nav-menu__item">
+                                <a href="#photos" class="nav-menu__link">Фото</a>
+                            </li>
+                            <li class="nav-menu__item">
+                                <a href="#feedback" class="nav-menu__link">Отзывы</a>
+                            </li>
+                            <li class="nav-menu__item">
+                                <a href="#contacts" class="nav-menu__link">Контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <main class="page-content">
+                <div class="container">
+                    <h2 class="promo">
+                        Научись ослепительно выглядеть на вечеринках за&nbsp;три&nbsp;занятия!
+                    </h2>
+                    <div id="schedule">
+                        <div class="row">
+                            <div class="column">
+                                <div class="purport">
+                                    <div class="purport__img-wrap">
+                                        <img src="img/pic-girl-1.jpg" alt="макияж" class="purport__img">
+                                    </div>
+                                    <h4 class="purport__header purport__header--indent">
+                                        <span class="purport__header-part">1-е занятие</span>
+                                        макияж
+                                    </h4>
+                                    <p class="purport__text">
+                                        Ты будешь самой привлекательной и яркой партнершей. Всегда отличные фото с вечеринок! Комплименты от партнеров гарантированы.
+                                    </p>
+                                </div>
+                                <div class="detail">
+                                    <p class="detail__price detail__icon--star">1500
+                                        <span class="discount__ru">р</span>
+                                    </p>
+                                    <ul class="detail__list">
+                                        <li class="detail__item">3 часа интенсивной практики</li>
+                                        <li class="detail__item">2 красивых макияжа с отработкой</li>
+                                        <li class="detail__item">Секреты стойкости макияжа</li>
+                                        <li class="detail__item">Индивидуальный подбор цветов</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="purport">
+                                    <div class="purport__img-wrap">
+                                        <img src="img/pic-girl-2.jpg" alt="прическа" class="purport__img">
+                                    </div>
+                                    <h4 class="purport__header purport__header--indent">
+                                        <span class="purport__header-part">2-е занятие</span>
+                                        прическа
+                                    </h4>
+                                    <p class="purport__text">
+                                        Волосы красиво уложены и&nbsp;не&nbsp;мешают&nbsp;танцевать. Прическа держится до утра!&nbsp;Окружающие оценят.
+                                    </p>
+                                </div>
+                                <div class="detail">
+                                    <p class="detail__price detail__icon--star">1500
+                                        <span class="discount__ru">р</span>
+                                    </p>
+                                    <ul class="detail__list">
+                                        <li class="detail__item">3 часа интенсивной практики</li>
+                                        <li class="detail__item">2 идеальных прически с отработкой</li>
+                                        <li class="detail__item">Секреты стойкой фиксации</li>
+                                        <li class="detail__item">Подбор прически по типу лица</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="purport">
+                                    <div class="purport__img-wrap">
+                                        <img src="img/pic-girl-3.jpg" alt="стиль" class="purport__img">
+                                    </div>
+                                    <h4 class="purport__header purport__header--indent">
+                                        <span class="purport__header-part">3-е занятие</span>
+                                        стиль
+                                    </h4>
+                                    <p class="purport__text">
+                                        Отличный стиль на тренировке, сногшибательные наряды на вечеринках - это просто! Привлеки к себе внимание партнеров и фотографов!
+                                    </p>
+                                </div>
+                                <div class="detail">
+                                    <p class="detail__price detail__icon--star">1500
+                                        <span class="discount__ru">р</span>
+                                    </p>
+                                    <ul class="detail__list">
+                                        <li class="detail__item">Подбор образов для вечеринки</li>
+                                        <li class="detail__item">Как подчеркнуть достоинства: советы стилиста</li>
+                                        <li class="detail__item">"Найди свою фишку" в стиле</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="discount">
+                    <div class="container">
+                        <h3 class="discount__header page-content__header page-content__header--color">При оплате трех занятий &mdash; скидка 25%</h3>
+                        <p class="discount__text">1500+1500+1500 = 3000
+                            <span class="discount__ru">р</span>
+                        </p>
+                        <form action="response.json" class="form js-validate-form" method="POST">
+                            <div class="form__block-wrap js-validate-wrap">
+                                <span class="input">
+                                    <input class="input__field" type="text" id="form-name" name="name" required>
+                                    <label class="input__label" for="form-name">
+                                        <span class="input__label-content">имя</span>
+                                    </label>
+                                </span>
+                            </div>
+                            <div class="form__block-wrap js-validate-wrap">
+                                <span class="input">
+                                    <input class="input__field js-mask-phone" type="text" id="form-phone" name="phone" required>
+                                    <label class="input__label" for="form-phone">
+                                        <span class="input__label-content">телефон</span>
+                                    </label>
+                                </span>
+                            </div>
+                            <div class="form__block-wrap js-validate-wrap">
+                                <button type="submit" class="button button--color form__button">Успеть записаться</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="container">
+                    <h3 class="page-content__header" id="professores">Наши преподаватели</h3>
+                    <p class="page-content__text">опытные мастера красоты и практикующие танцоры</p>
+                    <div class="row">
+                        <div class="column">
+                            <div class="purport purport--tablet">
+                                <div class="purport__img-wrap purport__img-wrap--big">
+                                    <img src="img/pic-prof-3.jpg" alt="Анастасия Сергеева (фото)" class="purport__img">
+                                </div>
+                                <h4 class="purport__header purport__header--smaller">Анастасия Сергеева</h4>
+                                <p class="purport__text">
+                                    Визажист и танцор с более чем 10-летним стажем, директор и преподаватель школы визажистов Total&nbsp;Beauty&nbsp;School
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="purport purport--tablet">
+                                <div class="purport__img-wrap purport__img-wrap--big">
+                                    <img src="img/pic-prof-2.jpg" alt="Татьяна Ларшина (фото)" class="purport__img">
+                                </div>
+                                <h4 class="purport__header purport__header--smaller">Татьяна Ларшина</h4>
+                                <p class="purport__text purport__text--indent">
+                                    Мастер по прическам, визажист, преподавать студии 25,5(сальса)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="purport purport--tablet">
+                                <div class="purport__img-wrap purport__img-wrap--big">
+                                    <img src="img/pic-prof-1.jpg" alt="Виктория Приходько (фото)" class="purport__img">
+                                </div>
+                                <h4 class="purport__header purport__header--smaller">Виктория Приходько</h4>
+                                <p class="purport__text purport__text--indent">Практикующий стилист-имиджмейкер, выпускница студии "28"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="support">
+                    <div class="container">
+                        <h3 class="support__header page-content__header">Мы с радостью ответим на все вопросы</h3>
+                        <span class="support__text page-content__text page-content__text--color">+7 921 567 78 89</span>
+                        <a href="#touch-form" data-modal="modal-form" class="button button--position js-show-popup" type="submit">Заказать звонок</a>
+                    </div>
+                </div>
+                <div class="container">
+                    <p class="page-content__header" id="feedback">Для сомневающихся</p>
+                    <p class="page-content__text page-content__text--indent">рекомендации наших довольных клиентов</p>
+                    <div class="row">
+                        <div class="column">
+                            <div class="purport purport--length  purport--tablet">
+                                <div class="purport__img-wrap purport__img-wrap--indent">
+                                    <img src="img/pic-girl-1.jpg" alt="user-photo" class="purport__img">
+                                </div>
+                                <h4 class="purport__header purport__header--smaller">Полина Соболева</h4>
+                                <p class="purport__text">
+                                    Тут будет отзыв полины Соболевой о том как круто быть накрашенной и причесанной
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="purport purport--length  purport--tablet">
+                                <div class="purport__img-wrap purport__img-wrap--indent">
+                                    <img src="img/pic-girl-2.jpg" alt="user-photo" class="purport__img">
+                                </div>
+                                <h4 class="purport__header purport__header--smaller">Соня Окладникова</h4>
+                                <p class="purport__text">
+                                    Тут будет отзыв Сони о том, что стилист и визажист очень важны для образа
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="purport purport--length  purport--tablet">
+                                <div class="purport__img-wrap purport__img-wrap--indent">
+                                    <img src="img/pic-girl-3.jpg" alt="user-photo" class="purport__img">
+                                </div>
+                                <h4 class="purport__header purport__header--smaller">Alisha Twins</h4>
+                                <p class="purport__text">
+                                    Тут будет отзыв Алины о том, что яркий и стильных людей она фотографирует в первую очередь
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="page-content__header page-content__header--indent">Как проходит обучение</h3>
+                    <p class="page-content__description">
+                        Ты будешь самой привлекательной и яркой партнершей. Всегда отличные фото с вечеринок! Комплименты от партнеров гарантированы. Ты будешь самой привлекательной и яркой партнершей. Всегда отличные фото с вечеринок! Комплименты от партнеров гарантированы.
+                    </p>
+                    <div class="gallery" id="photos">
+                        <div class="gallery__column gallery__column--first">
+                            <div class="gallery__item gallery__item--1">
+                                <img src="img/gallery-2.jpg" alt="" class="gallery__img">
+                            </div>
+                            <div class="gallery__inner gallery__inner--left-1">
+                                <div class="gallery__item gallery__item--2">
+                                    <img src="img/gallery-4.jpg" alt="" class="gallery__img">
+                                </div>
+                                <div class="gallery__item gallery__item--3">
+                                    <img src="img/gallery-10.jpg" alt="" class="gallery__img">
+                                </div>
+                            </div>
+                            <div class="gallery__inner gallery__inner--right-1">
+                                <div class="gallery__item gallery__item--4">
+                                    <img src="img/gallery-5.jpg" alt="" class="gallery__img">
+                                </div>
+                                <div class="gallery__item gallery__item--5">
+                                    <img src="img/gallery-6.jpg" alt="" class="gallery__img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery__column">
+                            <div class="gallery__inner gallery__inner--left-2">
+                                <div class="gallery__item gallery__item--6">
+                                    <img src="img/gallery-1.jpg" alt="" class="gallery__img">
+                                </div>
+                                <div class="gallery__item gallery__item--7">
+                                    <img src="img/gallery-8.jpg" alt="" class="gallery__img">
+                                </div>
+                                <div class="gallery__item gallery__item--8">
+                                    <img src="img/gallery-9.jpg" alt="" class="gallery__img">
+                                </div>
+                            </div>
+                            <div class="gallery__inner gallery__inner--right-2">
+                                <div class="gallery__item gallery__item--9">
+                                    <img src="img/gallery-3.jpg" alt="" class="gallery__img">
+                                </div>
+                                <div class="gallery__item gallery__item--10">
+                                    <img src="img/gallery-7.jpg" alt="" class="gallery__img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="page-footer" id="contacts">
+                <div class="page-footer__wrap">
+                    <div class="container">
+                        <h3 class="page-footer__header">Контакты</h3>
+                        <div class="contacts">
+                            <address class="contacts__address">Чкаловский пр. 15, офис 5</address>
+                            <p class="contacts__details">
+                                Вход через магазин
+                                <span class="contacts__details-part">Идея</span>
+                                , первая дверь&nbsp;налево
+                            </p>
+                            <p class="contacts__details">Домофон 1, четвертый этаж.</p>
+                        </div>
+                        <div class="map">
+                            <div class="map__yandex" id="ymap"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup popup--touch" id="touch-form">
+                    <div class="container">
+                        <h1 class="popup__header popup__header--form">Заполните, пожалуйста, форму ниже:</h1>
+                        <form action="response.json" class="form form--popup js-validate-form" method="POST">
+                            <div class="form__block-wrap form__block-wrap--popup js-validate-wrap">
+                                <span class="input input--popup">
+                                    <input class="input__field" type="text" id="touch-user-name" name="name" required>
+                                    <label class="input__label" for="touch-user-name">
+                                        <span class="input__label-content">имя</span>
+                                    </label>
+                                </span>
+                            </div>
+                            <div class="form__block-wrap form__block-wrap--popup js-validate-wrap">
+                                <span class="input input--popup input--indent">
+                                    <input class="input__field js-mask-phone" type="text" id="touch-user-phone" name="phone" required>
+                                    <label class="input__label" for="touch-user-phone">
+                                        <span class="input__label-content">телефон</span>
+                                    </label>
+                                </span>
+                            </div>
+                            <div class="form__block-wrap form__block-wrap--popup js-validate-wrap">
+                                <button type="submit" class="button button--color button--popup form__button">Успеть записаться</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- <div class="social"></div> -->
+            </footer>
+            <!-- popup -->
+            <div class="remodal popup" data-remodal-id="modal-response">
+                <h1 class="popup__header js-response-title">Заявка отправлена</h1>
+                <p class="popup__text js-response-message">
+                    Благодарим, ваша заявка уже поступила к нам. В ближайшее время мы свяжемся с вами.
+                </p>
+                <br>
+                <button class="popup__btn" data-remodal-action="confirm" class="remodal-confirm">OK</button>
+            </div>
+            <!-- end of popup -->
+            <!-- popup-form -->
+            <div class="remodal popup" data-remodal-id="modal-form">
+                <h1 class="popup__header popup__header--form">Заполните, пожалуйста, форму ниже:</h1>
+                <form action="response.json" class="form form--popup js-validate-form" method="POST">
+                    <div class="form__block-wrap form__block-wrap--popup js-validate-wrap">
+                        <span class="input input--popup">
+                            <input class="input__field" type="text" id="popup-name" name="name" required>
+                            <label class="input__label" for="popup-name">
+                                <span class="input__label-content">имя</span>
+                            </label>
+                        </span>
+                    </div>
+                    <div class="form__block-wrap form__block-wrap--popup js-validate-wrap">
+                        <span class="input input--popup input--indent">
+                            <input class="input__field js-mask-phone" type="text" id="popup-phone" name="phone" required>
+                            <label class="input__label" for="popup-phone">
+                                <span class="input__label-content">телефон</span>
+                            </label>
+                        </span>
+                    </div>
+                    <div class="form__block-wrap form__block-wrap--popup js-validate-wrap">
+                        <button type="submit" class="button button--color button--popup form__button">Успеть записаться</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- end of popup-form -->
+        <script src="http://yastatic.net/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+            window.jQuery || document.write('<script src="js/lib/jquery2.1.4.min.js"><\/script>')
+        </script>
+        <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+        <script src="js/build/scripts.min.js"></script>
+        <script src="_assets/jquery.pixlayout.js"></script>
+        <script>
+            $(function() {
+                if (!true) {
+                    $.pixlayout({
+                        src: "_assets/tbs-jpg.jpg",
+                        opacity: 0.4,
+                        top: -2,
+                        center: true,
+                        clip: true,
+                        show: true,
+                    })
+                }
+            });
+        </script>
+    </body>
+</html>

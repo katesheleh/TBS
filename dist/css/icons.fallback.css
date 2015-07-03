@@ -1,0 +1,22 @@
+.logo__icon--logo:before,
+.icon-logo {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('../img/png-grunticon/logo.png');
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 160px;
+}
+
+
+.detail__icon--star:before,
+.icon-star {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('../img/png-grunticon/star.png');
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 23px;
+}
+
+
