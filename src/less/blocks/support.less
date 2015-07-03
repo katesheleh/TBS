@@ -14,7 +14,16 @@
 
 
 
-  &__text {}
+  &__text {
+    text-decoration: none;
+
+    &:hover {
+      color: darken(@color-light, 12%);
+    }
+    &:active {
+      color: darken(@color-light, 17%);
+    }
+  }
 
 
 
