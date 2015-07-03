@@ -21,7 +21,7 @@ require('load-grunt-tasks')(grunt);
       },
       style: {
         expand: true,
-        src: ["<%= config.src %>/less/**/*.less"]
+        src: ['!<%= config.src %>/less/components/*.less','<%= config.src %>/less/**/*.less']
       }
     },
 
@@ -120,17 +120,17 @@ require('load-grunt-tasks')(grunt);
 
     browserSync: {
       dev: {
-          bsFiles: {
-              src : [
-                  '<%= config.src %>/css/*.css',
-                  '<%= config.src %>/*.html',
-                  '<%= config.src %>/js/build/*.js'
-              ]
-          },
-          options: {
-              watchTask: true,
-              server: '<%= config.src %>'
-          }
+        bsFiles: {
+          src : [
+            '<%= config.src %>/css/*.css',
+            '<%= config.src %>/*.html',
+            '<%= config.src %>/js/build/*.js'
+          ]
+        },
+        options: {
+          watchTask: true,
+          server: '<%= config.src %>'
+        }
       }
     },
 
@@ -206,13 +206,6 @@ require('load-grunt-tasks')(grunt);
           title: 'SVG',  // optional
           message: 'you have the SVG sprite', //required
         }
-      },
-
-      png: {
-        options: {
-          title: 'PNG',  // optional
-          message: 'PNG sprite was created', //required
-        }
       }
     },
 
@@ -221,11 +214,12 @@ require('load-grunt-tasks')(grunt);
     lintspaces: {
       test: {
         src: [
-          '<%= config.src %>/*.html',
           '!<%= config.src %>/icon-preview.html',
+          '<%= config.src %>/*.html',
           '<%= config.src %>/js/scripts.js',
-          '<%= config.src %>/less/*.less',
-          '<%= config.src %>/sass/*.sass'
+          '!<%= config.src %>/js/plugins/*.js',
+          '!<%= config.src %>/js/lib/*.js',
+          '<%= config.src %>/less/*.less'
         ],
         options: {
           editorconfig: '.editorconfig'
@@ -248,13 +242,12 @@ require('load-grunt-tasks')(grunt);
           expand: true,
           cwd: '<%= config.src %>',
           src: [
-            'img/**/*',
-            '!css/sprite.css',
-            'css/**',
             'index.html',
+            'img/**/*',
+            'css/**',
             'js/build/*.js',
             'js/lib/*.js',
-            'fonts/*.otf'
+            'fonts/*.{eof,otf,svg,ttf,woff}'
           ],
           dest: '<%= config.dist %>',
         }]
@@ -304,9 +297,6 @@ require('load-grunt-tasks')(grunt);
         '<%= config.src %>/img/png-grunticon',
         '<%= config.src %>/_svg/svgmin'
       ],
-      png: [
-        '<%= config.src %>/img/sprite.css'
-      ],
       finish: [
         '<%= config.dist %>'
       ]
@@ -334,7 +324,7 @@ require('load-grunt-tasks')(grunt);
     },
 
     grunticon: {
-    mysvg: {
+      mysvg: {
         files: [{
             expand: true,
             cwd: '<%= config.src %>/_svg',
@@ -360,15 +350,6 @@ require('load-grunt-tasks')(grunt);
         }
       }
     }
-
-    // sprite:{
-    //   all: {
-    //     src: '<%= config.src %>/_png/*.png',
-    //     dest: '<%= config.src %>/img/spritesheet.png',
-    //     destCss: '<%= config.src %>/css/sprite.css',
-    //     padding: 20
-    //   }
-    // }
   });
 
 
@@ -393,13 +374,6 @@ require('load-grunt-tasks')(grunt);
   ]);
 
 
-   grunt.registerTask('png', [
-    'clean:png',
-    'sprite',
-    'notify:png'
-  ]);
-
-
   grunt.registerTask('fit', [
    'clean:finish',
    'copy:make',
@@ -414,7 +388,6 @@ require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('make', [
     'svg',
-    // 'csscomb', //hmmm its buggy
     'styles',
     'scripts',
     'fit',
@@ -423,7 +396,6 @@ require('load-grunt-tasks')(grunt);
 
 
   grunt.registerTask('default', [
-    // 'csscomb', //hmmm its buggy
     'styles',
     'scripts',
     'browserSync',
