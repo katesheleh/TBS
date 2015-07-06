@@ -1,3 +1,25 @@
+.social--facebook:before,
+.icon-facebook {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('../img/png-grunticon/facebook.png');
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+}
+
+
+.social--instagram:before,
+.icon-instagram {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('../img/png-grunticon/instagram.png');
+  background-repeat: no-repeat;
+  width: 19px;
+  height: 19px;
+}
+
+
 .logo__icon--logo:before,
 .icon-logo {
   display: inline-block;
@@ -17,6 +39,17 @@
   background-repeat: no-repeat;
   width: 24px;
   height: 23px;
+}
+
+
+.social--vk:before,
+.icon-vk {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('../img/png-grunticon/vk.png');
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
 }
 
 
