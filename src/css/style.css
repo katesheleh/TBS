@@ -2222,10 +2222,6 @@ html {
   top: 15px;
   left: 15px;
 }
-.social--facebook:before {
-  top: 9px;
-  left: 6px;
-}
 .social--vk:before {
   top: 15px;
   left: 14px;
@@ -2242,10 +2238,6 @@ html {
   .social--instagram:before {
     top: 14px;
     left: 14px;
-  }
-  .social--facebook:before {
-    top: 8px;
-    left: 5px;
   }
   .social--vk:before {
     top: 14px;
@@ -2264,10 +2256,6 @@ html {
   .social--instagram:before {
     top: 13px;
     left: 13px;
-  }
-  .social--facebook:before {
-    top: 7px;
-    left: 3px;
   }
   .social--vk:before {
     top: 13px;
