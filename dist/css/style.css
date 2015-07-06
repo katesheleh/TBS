@@ -697,7 +697,7 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: center;
-	font-family: "Pancetta Pro";
+	font-family: "PancettaPro-Regular";
 	font-size: 18px;
 	line-height: 23px;
 	font-weight: 400;
@@ -730,17 +730,22 @@ html {
 }
 
 @font-face {
-	font-family: Pancetta Pro;
-	src: url(../fonts/Mint Type - Pancetta Pro Regular.otf);
+	font-family: 'PancettaPro-Regular';
+	src: url('../fonts/PancettaPro-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/PancettaPro-Regular.otf') format('opentype'), url('../fonts/PancettaPro-Regular.woff') format('woff'), url('../fonts/PancettaPro-Regular.ttf') format('truetype'), url('../fonts/PancettaPro-Regular.svg#PancettaPro-Regular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: ALS Rubl;
-	src: url(../fonts/rubl-regular.ttf);
+	font-family: 'ruble';
+	src: url('../fonts/ruble.eot');
+	src: url('../fonts/ruble.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
+}
+
+.ruble {
+	font-family: ruble;
 }
 
 .row:after {
@@ -1071,10 +1076,6 @@ html {
 	font-weight: 300;
 }
 
-.discount__ru {
-	font-family: "ALS Rubl";
-}
-
 .form {
 	padding: 0 33px 45px 33px;
 	display: block;
@@ -1122,7 +1123,7 @@ html {
 	background-color: #ffffff;
 	font-size: 18px;
 	line-height: 20px;
-	font-family: "Pancetta Pro";
+	font-family: "PancettaPro-Regular";
 	font-weight: 400;
 	color: #122330;
 	border: none;
@@ -1172,6 +1173,18 @@ html {
 .support__header {
 	padding-top: 26px;
 	margin: 16px 0 16px 0;
+}
+
+.support__text {
+	text-decoration: none;
+}
+
+.support__text:hover {
+	color: #e0e0e0;
+}
+
+.support__text:active {
+	color: #d4d4d4;
 }
 
 .support__button {
@@ -1337,7 +1350,7 @@ html {
 }
 
 .popup {
-	font-family: "Pancetta Pro";
+	font-family: "PancettaPro-Regular";
 	background-color: #e4e4e3;
 	background-image: url(../img/bg-main.png);
 	background-repeat: repeat;
@@ -1607,6 +1620,7 @@ html {
 	padding: 0;
 	list-style: none;
 	overflow: hidden;
+	background-color: #122330;
 	transition: all 0.2s ease-in-out;
 }
 
@@ -2139,6 +2153,7 @@ html {
 	padding: 0;
 	list-style: none;
 	overflow: hidden;
+	background-color: #122330;
 	transition: all 0.2s ease-in-out;
 }
 
