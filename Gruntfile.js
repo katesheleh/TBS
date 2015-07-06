@@ -346,7 +346,6 @@ require('load-grunt-tasks')(grunt);
           customselectors: {
                 "logo": [".logo__icon--logo:before"],
                 "star": [".detail__icon--star:before"],
-                "facebook": [".social--facebook:before"],
                 "instagram": [".social--instagram:before"],
                 "vk": [".social--vk:before"]
           },

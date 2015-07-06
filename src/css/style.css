@@ -1949,12 +1949,7 @@ html {
   }
 }
 .gallery {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  display: block;
   width: 90%;
   margin: 0 auto;
 }
@@ -1969,6 +1964,7 @@ html {
 }
 .gallery__column {
   width: 50%;
+  float: left;
 }
 .gallery__column--first {
   padding-right: 12px;
@@ -1991,34 +1987,43 @@ html {
   width: 60%;
 }
 .gallery__item {
-  margin-bottom: 26px;
+  margin-bottom: 5%;
+}
+.gallery__item--1 {
+  margin-right: 1%;
 }
 .gallery__item--2 {
   float: left;
-  margin-bottom: 20px;
+  margin-bottom: 8%;
+  margin-right: 7%;
 }
 .gallery__item--3 {
   float: left;
+  margin-right: 7%;
 }
 .gallery__item--4 {
-  margin-bottom: 20px;
+  margin-bottom: 11%;
+  margin-right: 2%;
+}
+.gallery__item--5 {
+  margin-right: 2%;
 }
 .gallery__item--6 {
   float: left;
-  margin-bottom: 20px;
-  margin-left: 3px;
+  margin-bottom: 11%;
+  margin-right: 10%;
 }
 .gallery__item--7 {
   float: left;
-  margin-bottom: 17px;
-  margin-left: 3px;
+  margin-bottom: 11%;
+  margin-right: 10%;
 }
 .gallery__item--8 {
   float: left;
-  margin-left: 3px;
+  margin-right: 10%;
 }
 .gallery__item--9 {
-  margin-bottom: 20px;
+  margin-bottom: 8%;
 }
 .gallery__img {
   max-width: 100%;
@@ -2026,31 +2031,29 @@ html {
   margin: 0 auto;
   vertical-align: bottom;
 }
+@media (min-width: 801px) and (max-width: 1079px) {
+  .gallery {
+    width: 100%;
+  }
+}
 @media (min-width: 541px) and (max-width: 800px) {
+  .gallery {
+    width: 100%;
+  }
   .gallery__item--1 {
-    margin-bottom: 15px;
+    margin-right: 0;
   }
-  .gallery__item--2 {
-    margin-right: 15px;
+  .gallery__item--4 {
+    margin-bottom: 11%;
+    margin-right: 0;
   }
-  .gallery__item--3 {
-    margin-right: 15px;
-  }
-  .gallery__item--6 {
-    margin-right: 15px;
-  }
-  .gallery__item--7 {
-    margin-right: 15px;
-  }
-  .gallery__item--8 {
-    margin-right: 15px;
+  .gallery__item--5 {
+    margin-right: 0;
   }
 }
 @media (max-width: 540px) {
   .gallery {
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    width: 100%;
   }
   .gallery__column {
     width: 100%;
@@ -2058,6 +2061,10 @@ html {
   }
   .gallery__column--first {
     padding-right: 0;
+  }
+  .gallery__item--4 {
+    margin-top: 6%;
+    margin-bottom: 15%;
   }
 }
 .page-footer__wrap {
@@ -2215,10 +2222,6 @@ html {
   top: 15px;
   left: 15px;
 }
-.social--facebook:before {
-  top: 9px;
-  left: 6px;
-}
 .social--vk:before {
   top: 15px;
   left: 14px;
@@ -2235,10 +2238,6 @@ html {
   .social--instagram:before {
     top: 14px;
     left: 14px;
-  }
-  .social--facebook:before {
-    top: 8px;
-    left: 5px;
   }
   .social--vk:before {
     top: 14px;
@@ -2257,10 +2256,6 @@ html {
   .social--instagram:before {
     top: 13px;
     left: 13px;
-  }
-  .social--facebook:before {
-    top: 7px;
-    left: 3px;
   }
   .social--vk:before {
     top: 13px;
