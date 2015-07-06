@@ -1346,7 +1346,54 @@ html {
 }
 
 .social {
-	height: 100px;
+	margin-top: 29px;
+	margin-bottom: 29px;
+}
+
+.social__btn {
+	position: relative;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 20px;
+	vertical-align: bottom;
+	text-align: center;
+	font: 0/0 serif;
+	text-shadow: none;
+	color: transparent;
+	background-color: #122330;
+	transition: all 0.2s ease-in-out;
+}
+
+.social__btn:before {
+	position: absolute;
+	content: " ";
+	bottom: 0;
+	right: 0;
+}
+
+.social__btn:hover {
+	background-color: #ed4d4e;
+}
+
+.social__btn:active {
+	background-color: #e92c2e;
+}
+
+.social--instagram:before {
+	top: 15px;
+	left: 15px;
+}
+
+.social--facebook:before {
+	top: 9px;
+	left: 6px;
+}
+
+.social--vk:before {
+	top: 15px;
+	left: 14px;
 }
 
 .popup {
@@ -1966,6 +2013,31 @@ html {
 	margin-bottom: 10px;
 }
 
+.social {
+	margin: 25px 0;
+}
+
+.social__btn {
+	width: 48px;
+	height: 48px;
+	margin-right: 15px;
+}
+
+.social--instagram:before {
+	top: 14px;
+	left: 14px;
+}
+
+.social--facebook:before {
+	top: 8px;
+	left: 5px;
+}
+
+.social--vk:before {
+	top: 14px;
+	left: 13px;
+}
+
 .popup__btn {
 	width: 200px;
 }
@@ -2482,6 +2554,31 @@ html {
 
 .contacts__details {
 	margin-bottom: 0;
+}
+
+.social {
+	margin: 20px 0;
+}
+
+.social__btn {
+	width: 45px;
+	height: 45px;
+	margin-right: 10px;
+}
+
+.social--instagram:before {
+	top: 13px;
+	left: 13px;
+}
+
+.social--facebook:before {
+	top: 7px;
+	left: 3px;
+}
+
+.social--vk:before {
+	top: 13px;
+	left: 11px;
 }
 
 .popup__header {
