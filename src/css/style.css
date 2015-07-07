@@ -2211,20 +2211,15 @@ html {
   content: " ";
   bottom: 0;
   right: 0;
+  top: 0;
+  left: 0;
+  margin: auto;
 }
 .social__btn:hover {
   background-color: #ed4d4e;
 }
 .social__btn:active {
   background-color: #e92c2e;
-}
-.social--instagram:before {
-  top: 15px;
-  left: 15px;
-}
-.social--vk:before {
-  top: 15px;
-  left: 14px;
 }
 @media (min-width: 541px) and (max-width: 800px) {
   .social {
@@ -2235,14 +2230,6 @@ html {
     height: 48px;
     margin-right: 15px;
   }
-  .social--instagram:before {
-    top: 14px;
-    left: 14px;
-  }
-  .social--vk:before {
-    top: 14px;
-    left: 13px;
-  }
 }
 @media (max-width: 540px) {
   .social {
@@ -2252,14 +2239,6 @@ html {
     width: 45px;
     height: 45px;
     margin-right: 10px;
-  }
-  .social--instagram:before {
-    top: 13px;
-    left: 13px;
-  }
-  .social--vk:before {
-    top: 13px;
-    left: 11px;
   }
 }
 .popup {
