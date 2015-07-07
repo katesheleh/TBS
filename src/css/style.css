@@ -1785,6 +1785,7 @@ html {
   width: 460px;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 0;
 }
 .form__block-wrap {
   min-height: 70px;
@@ -1808,6 +1809,9 @@ html {
   .form__label-error {
     font-size: 15px;
   }
+  .form--popup {
+    padding-bottom: 0;
+  }
   .form--popup .form__label-error {
     font-size: 18px;
   }
@@ -1822,6 +1826,9 @@ html {
     width: 460px;
     padding: 0;
     float: none;
+  }
+  .form--popup {
+    padding-bottom: 0;
   }
 }
 @media (max-width: 540px) {
@@ -1838,6 +1845,7 @@ html {
   }
   .form--popup {
     width: 100%;
+    padding-bottom: 0;
   }
   .form__label-error {
     font-size: 15px;
@@ -2097,6 +2105,7 @@ html {
   }
   .page-footer__wrap {
     height: 485px;
+    margin-bottom: 20px;
   }
 }
 .map {
@@ -2233,7 +2242,7 @@ html {
 }
 @media (max-width: 540px) {
   .social {
-    margin: 20px 0;
+    margin: 0 0 20px 0;
   }
   .social__btn {
     width: 45px;
