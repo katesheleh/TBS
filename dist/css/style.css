@@ -875,7 +875,7 @@ html {
 
 .page-content {
 	padding-top: 9px;
-	padding-bottom: 83px;
+	padding-bottom: 70px;
 }
 
 .page-content__header {
@@ -1809,6 +1809,10 @@ html {
 	z-index: 1;
 }
 
+.page-content {
+	padding-bottom: 50px;
+}
+
 .page-content__header {
 	font-size: 23px;
 	line-height: 30px;
@@ -2068,6 +2072,10 @@ html {
 
 .page-header {
 	background-size: cover;
+}
+
+.page-content {
+	padding-bottom: 60px;
 }
 
 .page-content__header {
@@ -2358,6 +2366,10 @@ html {
 	max-height: 500px;
 	width: 100%;
 	z-index: 1;
+}
+
+.page-content {
+	padding-bottom: 35px;
 }
 
 .page-content__header {
