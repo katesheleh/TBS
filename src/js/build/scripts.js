@@ -2384,7 +2384,8 @@ var validateForm = (function() {
 
   function readyToSubmit(form) {
     if (!form) return;
-
+    var name = $(form).find('input[name=name]').value;
+    var phone = $(form).find('input[name=phone]').value;
     var url = encodeURIComponent(form.getAttribute('action'));
     // alert('Первая строка\nВторая строка');
     // TODO:
@@ -2392,12 +2393,12 @@ var validateForm = (function() {
 
     $.ajax({
       url: url,
-      type: 'GET',
-      dataType: 'json',
-      data: $(form).serialize(),
+      type: 'POST',
+      dataType: "html",
+      data:{"email": "<?php the_field('mail'); ?>","email_2": "<?php the_field('mail_2');?>","name": name,"phone": phone} ,
     })
     .done(function(data) {
-      sendMessage(data.title, data.message);
+      sendMessage("Заявка отправлена", "Благодарим, ваша заявка уже поступила к нам. В ближайшее время мы свяжемся с вами.");
     })
     .fail(function() {
       sendMessage("Произошла ошибка", "Пожалуйста, повторите отправку. В случае неудачи свяжитесь с нами по телефону.");
@@ -2445,7 +2446,7 @@ var validateForm = (function() {
     minlength: $.validator.format("Пожалуйста, введите не меньше {0} символов."),
     rangelength: $.validator.format("Пожалуйста, введите значение длиной от {0} до {1} символов."),
     range: $.validator.format("Пожалуйста, введите число от {0} до {1}."),
-    max: $.validator.format("Пожалуйста, введите число, меньшее или равное {0}."),
+    max: $.validator.format("Пожалуйста, введите число, меньшее или равное {0}."),
     min: $.validator.format("Пожалуйста, введите число, большее или равное {0}.")
   });
 
