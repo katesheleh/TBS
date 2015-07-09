@@ -43,8 +43,8 @@ var validateForm = (function() {
 
   function readyToSubmit(form) {
     if (!form) return;
-    var name = $(form).find('input[name=name]').value;
-    var phone = $(form).find('input[name=phone]').value;
+    var name = $(form).find('input[name=name]').val();
+    var phone = $(form).find('input[name=phone]').val();
     var url = encodeURIComponent(form.getAttribute('action'));
     // alert('Первая строка\nВторая строка');
     // TODO:
