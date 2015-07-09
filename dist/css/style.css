@@ -1242,46 +1242,55 @@ html {
 }
 
 .gallery__item {
+	width: 100%;
 	margin-bottom: 5%;
 }
 
 .gallery__item--1 {
+	width: 99%;
 	margin-right: 1%;
 }
 
 .gallery__item--2 {
+	width: 93%;
 	float: left;
 	margin-bottom: 8%;
 	margin-right: 7%;
 }
 
 .gallery__item--3 {
+	width: 93%;
 	float: left;
 	margin-right: 7%;
 }
 
 .gallery__item--4 {
+	width: 98%;
 	margin-bottom: 11%;
 	margin-right: 2%;
 }
 
 .gallery__item--5 {
+	width: 98%;
 	margin-right: 2%;
 }
 
 .gallery__item--6 {
+	width: 90%;
 	float: left;
 	margin-bottom: 11%;
 	margin-right: 10%;
 }
 
 .gallery__item--7 {
+	width: 90%;
 	float: left;
 	margin-bottom: 11%;
 	margin-right: 10%;
 }
 
 .gallery__item--8 {
+	width: 90%;
 	float: left;
 	margin-right: 10%;
 }
